@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="16px" height="16px" viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Icons/00_MISC/CaretDown</title>
+    <g id="Icons/00_MISC/CaretDown" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <path d="M10.3333333,14.5 C10.6979167,14.5 11,14.1601562 11,13.75 L11,3.25 C11,2.83984375 10.6979167,2.5 10.3333333,2.5 C10.15625,2.5 9.98958333,2.58203125 9.86458333,2.72265625 L5.19791667,7.97265625 C5.07291667,8.11328125 5,8.30078125 5,8.5 C5,8.69921875 5.07291667,8.88671875 5.19791667,9.02734375 L9.86458333,14.2773438 C9.98958333,14.4179688 10.15625,14.5 10.3333333,14.5 Z" id="" fill="#FFFFFF" fill-rule="nonzero" transform="translate(8.000000, 8.500000) rotate(-90.000000) translate(-8.000000, -8.500000) "></path>
+    </g>
+</svg>

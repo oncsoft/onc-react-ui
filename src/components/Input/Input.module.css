@@ -1,0 +1,70 @@
+.inputContainer {
+  margin-top: 0.75rem;
+  position: relative;
+  width: 100%;
+  height: 2.25rem;
+  display: flex;
+  border-bottom: 2px solid var(--primaryColor);
+  box-shadow: 0px 14px 10px -15px var(--shadowColor);
+}
+.rounded {
+  border-radius: 1.25rem;
+  border: 0.1rem solid var(--primaryColor) !important;
+  width: 100% !important;
+}
+
+.bordered {
+  border-radius: 0.4rem;
+  border: 0.1rem solid var(--primaryColor) !important;
+  width: 100% !important;
+}
+
+.input {
+  margin-top: 0.2rem;
+  border: unset;
+  padding-left: 0.5rem;
+  width: calc(100% - 2.25rem);
+  background: transparent;
+  transition: all 0.3s ease;
+}
+
+.input:focus {
+  padding-left: 0.5rem;
+  font-weight: bold;
+  filter: brightness(120%);
+  outline: none;
+}
+
+.errorMessage {
+  color: var(--primaryColor);
+  bottom: -1rem;
+  left: 0.2rem;
+  position: absolute;
+  font-size: 0.5rem;
+}
+
+.sizeLabel {
+  top: 0.75rem;
+  right: 0.3rem;
+  position: absolute;
+  color: var(--primaryColor);
+  font-size: 0.75rem;
+}
+
+.inputLabel {
+  font-size: 0.75rem;
+  color: var(--primaryColor);
+  font-weight: bold;
+  position: absolute;
+  top: -0.75rem;
+  left: 0;
+}
+
+.input[disabled] {
+  cursor: not-allowed;
+}
+
+.disabled {
+  border-color: var(--disabledColor);
+  color: var(--disabledColor);
+}

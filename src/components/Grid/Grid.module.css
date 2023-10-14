@@ -1,0 +1,27 @@
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  margin: calc(var(--spacing) * 0.25rem) calc(var(--spacing) * 0.125rem);
+  justify-content: flex-start;
+  padding-top: 1rem;
+  padding-bottom: 0.5rem;
+}
+
+.gridItem {
+  display: flex;
+  flex: 1;
+  min-width: calc(var(--item) * (100% / 12) - 10px);
+  justify-content: var(--justifyContent);
+  align-items: var(--alignItems);
+  margin-bottom: 0.5rem;
+}
+
+.row {
+  flex-direction: row;
+}
+
+.column {
+  flex-direction: column;
+  justify-content: var(--justifyContent);
+  align-items: var(--alignItems);
+}

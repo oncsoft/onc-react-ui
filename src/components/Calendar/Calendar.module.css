@@ -1,0 +1,70 @@
+.calendar {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin: 0 auto;
+  border: 2px solid var(--secondaryColor);
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+  background: var(--primaryColor);
+  box-shadow: 0 0.5rem 1.5rem -0.5rem var(--shadowColor);
+}
+
+.calendar h2 {
+  font-size: 1rem;
+  margin: 0;
+  padding: 0.5rem 0;
+  color: #fff;
+}
+
+.navigation {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+  color: #fff;
+}
+
+.navigation button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #fff;
+}
+
+.weekdays {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.3rem;
+  color: #fff;
+}
+
+.weekdays div {
+  width: 14.28%;
+  padding: 0.3rem 0;
+  font-weight: bold;
+  text-align: center;
+}
+
+.days {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.day {
+  width: 14.28%;
+  padding: 10px 0;
+  text-align: center;
+  cursor: pointer;
+  color: #fff;
+}
+
+.selected {
+  background-color: var(--secondaryColor);
+  color: #fff;
+  border-radius: 1rem;
+}
+
+.disabled {
+  cursor: not-allowed;
+  color: #aaa;
+}

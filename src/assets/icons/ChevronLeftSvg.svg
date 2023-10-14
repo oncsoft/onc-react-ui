@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="16px" height="16px" viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Icons/00_MISC/ChevronLeft</title>
+    <g id="Icons/00_MISC/ChevronLeft" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <path d="M9.77391247,13.8603785 L10.9980905,12.6242631 C11.1824547,12.4381011 11.1824547,12.140242 10.9980905,11.95408 L7.08219569,8 L10.9980905,4.04591995 C11.1824547,3.85975799 11.1824547,3.56189885 10.9980905,3.37573689 L9.77391247,2.13962147 C9.58954831,1.95345951 9.29456565,1.95345951 9.11020148,2.13962147 L3.63827312,7.66490847 C3.45390896,7.85107043 3.45390896,8.14892957 3.63827312,8.33509153 L9.11020148,13.8603785 C9.29456565,14.0465405 9.58954831,14.0465405 9.77391247,13.8603785 Z" id="ChevronLeft" fill="#FFFFFF" fill-rule="nonzero"></path>
+    </g>
+</svg>

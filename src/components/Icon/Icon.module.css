@@ -1,0 +1,127 @@
+.icon {
+  display: block;
+  line-height: 0;
+}
+
+.icon path,
+.icon rect,
+.icon circle {
+  fill: currentColor;
+}
+
+.primary path {
+  fill: var(--primaryColor);
+}
+
+.primary:hover path {
+  fill: var(--primaryColor);
+}
+
+.primary g {
+  stroke: var(--primaryColor);
+}
+
+.primary:hover g {
+  stroke: var(--primaryColor);
+}
+
+.primary circle {
+  fill: var(--primaryColor);
+}
+
+.primary:hover circle {
+  fill: var(--primaryColor);
+}
+
+.primary rect {
+  fill: var(--primaryColor);
+}
+
+.primary:hover rect {
+  fill: var(--primaryColor);
+}
+
+.secondary path {
+  fill: var(--secondaryColor);
+}
+
+.secondary:hover path {
+  fill: var(--secondaryColor);
+}
+
+.secondary g {
+  stroke: var(--secondaryColor);
+}
+
+.secondary:hover g {
+  stroke: var(--secondaryColor);
+}
+
+.secondary circle {
+  fill: var(--secondaryColor);
+}
+
+.secondary:hover circle {
+  fill: var(--secondaryColor);
+}
+
+.secondary rect {
+  fill: var(--secondaryColor);
+}
+
+.secondary:hover rect {
+  fill: var(--secondaryColor);
+}
+
+.error path {
+  fill: var(--errorColor);
+}
+
+.error:hover path {
+  fill: var(--errorColor);
+}
+
+.error circle {
+  fill: var(--errorColor);
+}
+
+.error:hover circle {
+  fill: var(--errorColor);
+}
+
+.error rect {
+  fill: var(--errorColor);
+}
+
+.error:hover rect {
+  fill: var(--errorColor);
+}
+
+.disabled path {
+  fill: var(--disabledColor);
+}
+
+.disabled:hover path {
+  fill: var(--disabledColor);
+}
+
+.disabled circle {
+  fill: var(--disabledColor);
+}
+
+.disabled:hover circle {
+  fill: var(--disabledColor);
+}
+
+.disabled rect {
+  fill: var(--disabledColor);
+}
+
+.disabled:hover rect {
+  fill: var(--disabledColor);
+}
+
+.disabled {
+  cursor: not-allowed;
+  pointer-events: none;
+}
