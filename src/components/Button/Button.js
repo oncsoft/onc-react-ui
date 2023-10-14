@@ -23,6 +23,8 @@ const Button = ({
   disabled,
   type,
   rounded,
+  icon,
+  noShadow,
   style = {},
 }) => {
   const theme = useTheme();
@@ -32,7 +34,7 @@ const Button = ({
     '--secondaryColor': theme.secondaryColor,
     '--paddingSize': sizes[size ?? 'md'].paddingSize,
     '--fontSize': sizes[size ?? 'md'].fontSize,
-    '--shadowColor': theme.shadowColor ?? '#1c1d1d',
+    '--shadowColor': noShadow ? 'transparent' : theme.shadowColor,
     '--disabledColor': theme.disabledColor,
   };
 
@@ -40,11 +42,12 @@ const Button = ({
     <button
       className={`${styleModules.button} ${styleModules[type ?? 'primary']} ${
         rounded ? styleModules.rounded : ''
-      }`}
+      } ${icon ? styleModules.icon : ''}`}
       style={styles}
       onClick={onClick}
       disabled={disabled}
     >
+      {icon}
       {label}
     </button>
   );
@@ -57,6 +60,8 @@ Button.propTypes = {
   disabled: PropTypes.bool,
   type: PropTypes.oneOf(['primary', 'secondary']),
   rounded: PropTypes.bool,
+  icon: PropTypes.any,
+  noShadow: PropTypes.bool,
   style: PropTypes.object,
 };
 

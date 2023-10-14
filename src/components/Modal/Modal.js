@@ -67,9 +67,11 @@ const Modal = ({
         >
           {heading}
           <Button
-            label={<CloseSvg />}
+            icon={<CloseSvg />}
             type="secondary"
             rounded
+            noShadow
+            style={{ width: '2rem', height: '2rem' }}
             onClick={onClose}
           />
         </div>

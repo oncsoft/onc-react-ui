@@ -10,6 +10,10 @@
   color: #ffffff;
 }
 
+.icon {
+  padding: 0.5rem !important;
+}
+
 .primary {
   background-color: var(--primaryColor);
 }

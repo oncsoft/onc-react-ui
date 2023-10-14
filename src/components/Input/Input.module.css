@@ -26,6 +26,7 @@
   width: calc(100% - 2.25rem);
   background: transparent;
   transition: all 0.3s ease;
+  color: inherit;
 }
 
 .input:focus {

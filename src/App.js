@@ -125,7 +125,6 @@ function App() {
             <Input
               label="Girişs"
               value={value}
-              disabled
               onChange={(e) => setValue(e.target.value)}
               inputSize={20}
             />

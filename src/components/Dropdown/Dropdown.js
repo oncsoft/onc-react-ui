@@ -12,7 +12,7 @@ const Dropdown = ({ label, onSelect, data = [], value, noShadow }) => {
   const styleVariables = {
     '--primaryColor': theme.primaryColor,
     '--secondaryColor': theme.secondaryColor,
-    '--shadowColor': noShadow ? '' : theme.shadowColor,
+    '--shadowColor': noShadow ? 'transparent' : theme.shadowColor,
     '--disabledColor': theme.disabledColor,
   };
   const containerRef = useRef();

@@ -5,15 +5,16 @@
   justify-content: flex-start;
   padding-top: 1rem;
   padding-bottom: 0.5rem;
+  gap: calc(var(--spacing) * 0.04rem);
 }
 
 .Grid_gridItem__Y5opQ {
   display: flex;
-  flex: 1 1;
+  flex-grow: var(--item);
+  max-width: calc(var(--item) * (100% / 12));
   min-width: calc(var(--item) * (100% / 12) - 10px);
   justify-content: var(--justifyContent);
   align-items: var(--alignItems);
-  margin-bottom: 0.5rem;
 }
 
 .Grid_row__ql-JB {
@@ -27,4 +28,4 @@
 }
 
 
-/*# sourceMappingURL=Grid-Grid-stories.27668c74.chunk.css.map*/
+/*# sourceMappingURL=Grid-Grid-stories.60a49e30.chunk.css.map*/
