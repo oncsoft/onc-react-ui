@@ -91,7 +91,7 @@ Input.propTypes = {
   onChange: PropTypes.func.isRequired,
   inputSize: PropTypes.number,
   error: PropTypes.string,
-  type: PropTypes.oneOf('text', 'number'),
+  type: PropTypes.oneOf(['text', 'number', 'password']),
   disabled: PropTypes.bool,
   style: PropTypes.object,
   bordered: PropTypes.bool,

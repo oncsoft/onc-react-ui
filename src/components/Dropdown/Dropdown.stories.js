@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { action } from '@storybook/addon-actions';
 import Dropdown from './Dropdown.js';
-import ThemeProvider from '../../utils/themejs';
+import ThemeProvider from '../../utils/theme';
 
 // More on how to set up stories at: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {

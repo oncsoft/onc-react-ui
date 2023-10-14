@@ -1,7 +1,6 @@
 .calendar {
   display: flex;
   flex-direction: column;
-  width: 100%;
   margin: 0 auto;
   border: 2px solid var(--secondaryColor);
   border-radius: 0.5rem;

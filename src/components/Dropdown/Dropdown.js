@@ -2,7 +2,7 @@ import React, { useEffect, useMemo, useState, useRef } from 'react';
 import PropTypes from 'prop-types';
 import Input from '../Input/Input.js';
 import styleModules from './Dropdown.module.css';
-import { useTheme } from '../../utils/theme.js';
+import { useTheme } from '../../utils/theme';
 
 const Dropdown = ({ label, onSelect, data = [], value, noShadow }) => {
   const [innerValue, setInnerValue] = useState(value);

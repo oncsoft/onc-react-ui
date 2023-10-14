@@ -1,6 +1,6 @@
 import React, { memo, forwardRef } from 'react';
 import PropTypes from 'prop-types';
-import { useTheme } from '../../utils/theme.js';
+import { useTheme } from '../../utils/theme';
 import styleModules from './Icon.module.css';
 const Icon = forwardRef(({ size = '1rem', type, children }, ref) => {
   const theme = useTheme();
@@ -12,7 +12,6 @@ const Icon = forwardRef(({ size = '1rem', type, children }, ref) => {
   return (
     <>
       {React.Children.map(children, (child) => {
-        console.error(child);
         if (React.isValidElement(child)) {
           return React.cloneElement(child, {
             ref,
@@ -24,7 +23,7 @@ const Icon = forwardRef(({ size = '1rem', type, children }, ref) => {
             version: '1.1',
           });
         }
-        return null; // Geçersiz bir elementi atlayın veya işlemeyin
+        return null;
       })}
     </>
   );
@@ -41,4 +40,5 @@ Icon.propTypes = {
   type: PropTypes.oneOf(['primary', 'secondary', 'disabled', 'error']),
   children: PropTypes.object,
 };
+
 export default memo(Icon);

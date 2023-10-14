@@ -1,0 +1,19 @@
+.editorContainer {
+  border: 2px solid var(--primaryColor);
+  background: var(--themeBackgroundColor) !important;
+  color: var(--themeTextColor) !important;
+}
+
+.themeToolbar {
+  border: 1px solid transparent;
+  background: var(--themeBackgroundColor) !important;
+  color: var(--themeTextColor) !important;
+}
+
+.blackColor {
+  color: black !important;
+}
+
+[class*='rdw-'] {
+  background: var(--themeBackgroundColor ?? white) !important;
+}

@@ -1,24 +1,19 @@
 import React from 'react';
-
-import Icon from './Icon.js';
-import * as icons from '../Icons/index.js';
-import ThemeProvider from '../../utils/theme.js';
-import Grid from '../Grid/Grid.js';
-import { AddSvg } from '../Icons/AddSvg.js';
-import defaultTheme from '../../utils/defaultTheme.js';
+import Icon from './Icon';
+import * as icons from '../Icons';
+import ThemeProvider from '../../utils/theme';
+import Grid from '../Grid/Grid';
+import defaultTheme from '../../utils/defaultTheme';
 
 export default {
   title: 'Icon',
   component: Icon,
-  parameters: {
-    layout: 'centered',
-  },
+  parameters: {},
   tags: ['autodocs'],
   argTypes: {},
 };
 
 const Story = (args) => {
-  console.error('icons', icons);
   return (
     <ThemeProvider>
       <Grid
@@ -46,13 +41,3 @@ const Story = (args) => {
 };
 
 export const Docs = Story.bind({});
-
-export const IconUsage = () => {
-  return (
-    <ThemeProvider>
-      <Icon size="1.rem" type="primary">
-        <AddSvg />
-      </Icon>
-    </ThemeProvider>
-  );
-};

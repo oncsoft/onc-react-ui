@@ -9,18 +9,23 @@ import AddSvg from './components/Icons/AddSvg.js';
 import Calendar from './components/Calendar/Calendar.js';
 import Checkbox from './components/Checkbox/Checkbox.js';
 import Modal from './components/Modal/Modal.js';
+import Editor from './components/Editor/Editor.js';
 
 function App() {
   const [type, setType] = useState('primary');
   const [value, setValue] = useState('');
   const [user, setUser] = useState('');
-  const [pass, setPass] = useState('');
+  const [pass, setPass] = useState('<b>sadasd</b>  asssss');
   const [d, setD] = useState(undefined);
   const [checked, setChecked] = useState(true);
   return (
     <ThemeProvider>
       <div className="App">
+        <Icon size="2rem">
+          <AddSvg />
+        </Icon>
         <Modal open style={{ height: 400 }} heading={'Deneme'}>
+          <Editor value={pass ?? ''} onChange={setPass} />
           <Grid
             container
             direction="column"

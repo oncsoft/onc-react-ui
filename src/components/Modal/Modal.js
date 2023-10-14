@@ -6,7 +6,15 @@ import Button from '../Button/Button.js';
 import { CloseSvg } from '../Icons/index.js';
 import { useTheme } from '../../utils/theme.js';
 
-const Modal = ({ open, onClose, children, style, heading }) => {
+const Modal = ({
+  open,
+  onClose,
+  children,
+  style,
+  heading,
+  width = 600,
+  height = 600,
+}) => {
   const [isDragging, setIsDragging] = useState(false);
   const modalRef = useRef(null);
   const offsetX = useRef(0);
@@ -67,7 +75,7 @@ const Modal = ({ open, onClose, children, style, heading }) => {
         </div>
         <div
           className={`${stylesModule.modalContent}`}
-          style={{ ...style, ...styleVariables }}
+          style={{ ...style, ...styleVariables, width, height }}
         >
           {children}
         </div>
@@ -82,6 +90,8 @@ Modal.propTypes = {
   onClose: PropTypes.func,
   heading: PropTypes.string,
   style: PropTypes.object,
+  width: PropTypes.number,
+  height: PropTypes.number,
   children: PropTypes.children,
 };
 
