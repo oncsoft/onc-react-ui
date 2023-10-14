@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { useTheme } from '../../utils/theme.js';
 import styleModules from './Input.module.css';
+import Grid from '../Grid/Grid.js';
 
 const Input = ({
   label,
@@ -49,33 +50,49 @@ const Input = ({
         }`}
         style={{ ...styleVariables, ...bottomBorderUnset }}
       >
-        <div className={styleModules.inputLabel}>{label}</div>
-        <input
-          className={`${styleModules.input} ${
-            bordered ? styleModules.bordered : ''
-          } ${rounded ? styleModules.rounded : ''}`}
-          style={{ ...styles, ...styleVariables }}
-          type={type}
-          value={value}
-          onChange={onChange}
-          disabled={disabled}
-          {...props}
-        />
-        {inputSize && sizeControl >= 0 && (
-          <div
-            className={`${styleModules.sizeLabel} ${
-              disabled ? styleModules.disabled : ''
-            }`}
-            style={styleVariables}
-          >
-            {sizeControl}
-          </div>
-        )}
-        {errorStatus && (
-          <div className={styleModules.errorMessage} style={styleVariables}>
-            {error ?? 'Maksimum değeri geçtiniz.'}
-          </div>
-        )}
+        <Grid
+          container
+          direction={'column'}
+          justifyContent={'flex-start'}
+          alignItems={'flex-start'}
+          style={{ paddingBottom: '0.1rem' }}
+        >
+          <div className={styleModules.inputLabel}>{label}</div>
+
+          <Grid item={12} container direction={'row'}>
+            <Grid item={10}>
+              <input
+                className={`${styleModules.input} ${
+                  bordered ? styleModules.bordered : ''
+                } ${rounded ? styleModules.rounded : ''}`}
+                style={{ ...styles, ...styleVariables }}
+                type={type}
+                value={value}
+                onChange={onChange}
+                disabled={disabled}
+                {...props}
+              />
+            </Grid>
+            <Grid item={2} alignItems={'flex-end'} justifyContent={'flex-end'}>
+              {inputSize && sizeControl >= 0 && (
+                <div
+                  className={`${styleModules.sizeLabel} ${
+                    disabled ? styleModules.disabled : ''
+                  }`}
+                  style={styleVariables}
+                >
+                  {sizeControl}
+                </div>
+              )}
+            </Grid>
+          </Grid>
+
+          {errorStatus && (
+            <div className={styleModules.errorMessage} style={styleVariables}>
+              {error ?? 'Maksimum değeri geçtiniz.'}
+            </div>
+          )}
+        </Grid>
       </div>
     </>
   );
