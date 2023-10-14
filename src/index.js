@@ -7,6 +7,7 @@ export { default as Calendar } from '../src/components/Calendar/Calendar';
 export { default as Checkbox } from '../src/components/Checkbox/Checkbox';
 export { default as Modal } from '../src/components/Modal/Modal';
 export { default as Editor } from '../src/components/Editor/Editor';
+export { default as DateTime } from '../src/components/DateTime/DateTime';
 
 export { default as ThemeProvider } from '../src/utils/theme';
 
