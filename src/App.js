@@ -49,16 +49,17 @@ function App() {
                 type="error"
               />
             </Grid>
-            <Grid item={6}>
+            <Grid item={6} mbt>
               <Dropdown
                 label="Dropdown Başlık"
                 data={['a', 'b']}
                 value={d}
                 onSelect={setD}
                 noShadow
+                bordered
               />
             </Grid>
-            <Grid item={6}>
+            <Grid item={6} mbt>
               <Input
                 type="text"
                 label="Kullanıcı Adı"
@@ -67,7 +68,7 @@ function App() {
                 onChange={(e) => setUser(e.target.value)}
               />
             </Grid>
-            <Grid item={6}>
+            <Grid item={6} mbt>
               <Input
                 type="text"
                 label="Şifre"
@@ -76,7 +77,7 @@ function App() {
                 onChange={(e) => setPass(e.target.value)}
               />
             </Grid>
-            <Grid item={6}>
+            <Grid item={12}>
               <Button size="md" onClick={() => alert('ok')} label="Giris" />
             </Grid>
           </Grid>
@@ -86,7 +87,7 @@ function App() {
           direction={'row'}
           justifyContent={'center'}
           alignItems={'center'}
-          spacing={8}
+          spacing={4}
         >
           <Grid item={1}>
             <Button

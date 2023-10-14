@@ -1,8 +1,7 @@
 .dropdownContainer {
   position: relative;
-  display: flex;
   width: 100%;
-  margin-top: 0.75rem;
+  box-shadow: 0px 14px 10px -15px var(--shadowColor);
 }
 
 .datalist {
@@ -11,12 +10,11 @@
   box-shadow: 0 0.5rem 1.5rem -0.5rem var(--secondaryColor);
   border-radius: 0 0 0.125rem 0.125rem;
   border-top: none;
-  width: calc(100% - 1rem);
   padding: 0.5rem;
+  width: calc(100% - 1rem);
   max-height: 10rem;
   overflow-y: auto;
   top: 3rem;
-  margin-top: 2px;
   z-index: 1;
 }
 

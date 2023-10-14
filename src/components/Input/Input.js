@@ -55,6 +55,7 @@ const Input = ({
           direction={'column'}
           justifyContent={'flex-start'}
           alignItems={'flex-start'}
+          item={12}
           style={{ paddingTop: '0.1rem', paddingBottom: '0.1rem' }}
         >
           <div className={styleModules.inputLabel}>{label}</div>

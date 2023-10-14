@@ -4,7 +4,15 @@ import Input from '../Input/Input.js';
 import styleModules from './Dropdown.module.css';
 import { useTheme } from '../../utils/theme';
 
-const Dropdown = ({ label, onSelect, data = [], value, noShadow }) => {
+const Dropdown = ({
+  label,
+  onSelect,
+  data = [],
+  value,
+  noShadow,
+  bordered,
+  rounded,
+}) => {
   const [innerValue, setInnerValue] = useState(value);
   const [isSearch, setIsSearch] = useState(false);
   const [open, setOpen] = useState(false);
@@ -86,6 +94,8 @@ const Dropdown = ({ label, onSelect, data = [], value, noShadow }) => {
         value={innerValue ?? ''}
         onChange={onChangeInput}
         noShadow={noShadow ?? false}
+        bordered={bordered}
+        rounded={rounded}
         onBlur={() => {
           optionsRef.current.focus();
         }}
@@ -102,6 +112,8 @@ Dropdown.propTypes = {
   data: PropTypes.array,
   value: PropTypes.string,
   noShadow: PropTypes.bool,
+  bordered: PropTypes.bool,
+  rounded: PropTypes.bool,
 };
 
 export default Dropdown;

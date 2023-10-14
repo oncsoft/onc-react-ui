@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useLayoutEffect, useRef } from 'react';
 import PropTypes from 'prop-types';
 import styleModules from './Grid.module.css';
 
@@ -11,21 +11,38 @@ const Grid = ({
   item,
   style = {},
   children,
+  mbt,
   className,
 }) => {
   const styles = {
     '--spacing': spacing ?? 0,
     '--justifyContent': justifyContent,
     '--alignItems': alignItems,
-    '--item': item ?? 1,
+    '--item': item,
     ...style,
   };
+  const gridRef = useRef();
+
+  useLayoutEffect(() => {
+    const parent = gridRef.current?.closest('.' + styleModules.container);
+    if (parent && parent.getAttribute('type') === 'column' && item) {
+      const width = (100 * item) / 12 + '%';
+      gridRef.current.style.minWidth = width;
+      gridRef.current.style.maxWidth = width;
+      gridRef.current.style.flexGrow = item;
+    }
+  }, []);
+
   return (
     <div
+      ref={gridRef}
       className={`${item ? styleModules.gridItem : ''} ${
         container ? styleModules.container : ''
-      } ${direction ? styleModules[direction] : ''} ${className}`}
+      } ${direction ? styleModules[direction] : ''} ${className} ${
+        mbt ? styleModules.mbt : ''
+      } ${className}`}
       style={styles}
+      type={direction}
     >
       {children}
     </div>
@@ -42,6 +59,7 @@ Grid.propTypes = {
   style: PropTypes.object,
   children: PropTypes.object,
   className: PropTypes.string,
+  mbt: PropTypes.bool,
 };
 
 export default Grid;
