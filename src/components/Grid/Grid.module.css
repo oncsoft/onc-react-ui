@@ -3,7 +3,7 @@
   flex-wrap: wrap;
   margin: calc(var(--spacing) * 0.25rem) calc(var(--spacing) * 0.125rem);
   justify-content: flex-start;
-  padding-top: 1rem;
+  padding-top: 0.5rem;
   padding-bottom: 0.5rem;
   gap: calc(var(--spacing) * 0.04rem);
 }

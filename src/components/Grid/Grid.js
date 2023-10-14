@@ -11,19 +11,20 @@ const Grid = ({
   item,
   style = {},
   children,
+  className,
 }) => {
   const styles = {
-    ...style,
     '--spacing': spacing ?? 0,
     '--justifyContent': justifyContent,
     '--alignItems': alignItems,
     '--item': item ?? 1,
+    ...style,
   };
   return (
     <div
       className={`${item ? styleModules.gridItem : ''} ${
         container ? styleModules.container : ''
-      } ${direction ? styleModules[direction] : ''}`}
+      } ${direction ? styleModules[direction] : ''} ${className}`}
       style={styles}
     >
       {children}
@@ -40,6 +41,7 @@ Grid.propTypes = {
   item: PropTypes.number,
   style: PropTypes.object,
   children: PropTypes.object,
+  className: PropTypes.string,
 };
 
 export default Grid;

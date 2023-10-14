@@ -47,7 +47,7 @@ const Input = ({
       <div
         className={`${styleModules.inputContainer} ${
           disabled ? styleModules.disabled : ''
-        }`}
+        } `}
         style={{ ...styleVariables, ...bottomBorderUnset }}
       >
         <Grid
@@ -55,16 +55,22 @@ const Input = ({
           direction={'column'}
           justifyContent={'flex-start'}
           alignItems={'flex-start'}
-          style={{ paddingBottom: '0.1rem' }}
+          style={{ paddingTop: '0.1rem', paddingBottom: '0.1rem' }}
         >
           <div className={styleModules.inputLabel}>{label}</div>
 
-          <Grid item={12} container direction={'row'}>
-            <Grid item={10}>
+          <Grid
+            item={12}
+            container
+            direction={'row'}
+            className={`${bordered ? styleModules.bordered : ''} ${
+              rounded ? styleModules.rounded : ''
+            }`}
+            style={styleVariables}
+          >
+            <Grid item={inputSize && sizeControl >= 0 ? 11 : 12}>
               <input
-                className={`${styleModules.input} ${
-                  bordered ? styleModules.bordered : ''
-                } ${rounded ? styleModules.rounded : ''}`}
+                className={`${styleModules.input} `}
                 style={{ ...styles, ...styleVariables }}
                 type={type}
                 value={value}
@@ -73,8 +79,12 @@ const Input = ({
                 {...props}
               />
             </Grid>
-            <Grid item={2} alignItems={'flex-end'} justifyContent={'flex-end'}>
-              {inputSize && sizeControl >= 0 && (
+            {inputSize && sizeControl >= 0 && (
+              <Grid
+                item={1}
+                alignItems={'flex-end'}
+                justifyContent={'flex-end'}
+              >
                 <div
                   className={`${styleModules.sizeLabel} ${
                     disabled ? styleModules.disabled : ''
@@ -83,8 +93,8 @@ const Input = ({
                 >
                   {sizeControl}
                 </div>
-              )}
-            </Grid>
+              </Grid>
+            )}
           </Grid>
 
           {errorStatus && (

@@ -6,12 +6,12 @@
 }
 .rounded {
   border-radius: 1.25rem;
-  border: 0.1rem solid var(--primaryColor) !important;
+  outline: 0.1rem solid var(--primaryColor) !important;
 }
 
 .bordered {
   border-radius: 0.4rem;
-  border: 0.1rem solid var(--primaryColor) !important;
+  outline: 0.1rem solid var(--primaryColor) !important;
 }
 
 .input {
@@ -45,6 +45,7 @@
   font-size: 0.75rem;
   color: var(--primaryColor);
   font-weight: bold;
+  margin-bottom: 0.25rem;
 }
 
 .input[disabled] {
