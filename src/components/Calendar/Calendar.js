@@ -9,6 +9,7 @@ import Grid from '../Grid/Grid';
 import { flushSync } from 'react-dom';
 
 const Calendar = ({
+  open = true,
   disabledRangeList,
   onChange,
   style = {},
@@ -161,49 +162,51 @@ const Calendar = ({
   };
 
   return (
-    <div
-      className={`${stylesModule.calendar}`}
-      style={{ ...style, ...stylesVariables }}
-    >
-      <div className={`${stylesModule.navigation}`}>
-        <Button
-          icon={<ChevronLeftSvg />}
-          rounded
-          type="secondary"
-          onClick={goToPreviousMonth}
-        />
-        <Button
-          label={
-            currentMonth.toLocaleString('default', { month: 'long' }) +
-            currentMonth.getFullYear()
-          }
-          onClick={onChangeYear}
-        />
-        <Button
-          icon={<ChevronRightSvg />}
-          rounded
-          type="secondary"
-          onClick={goToNextMonth}
-        />
-      </div>
-      <div className={`${stylesModule.content}`}>
-        <div className={`${stylesModule.weekdays}`}>
-          <div>Pzt</div>
-          <div>Sal</div>
-          <div>Çar</div>
-          <div>Per</div>
-          <div>Cum</div>
-          <div>Cmt</div>
-          <div>Paz</div>
+    open && (
+      <div
+        className={`${stylesModule.calendar}`}
+        style={{ ...style, ...stylesVariables }}
+      >
+        <div className={`${stylesModule.navigation}`}>
+          <Button
+            icon={<ChevronLeftSvg />}
+            rounded
+            type="secondary"
+            onClick={goToPreviousMonth}
+          />
+          <Button
+            label={
+              currentMonth.toLocaleString('default', { month: 'long' }) +
+              currentMonth.getFullYear()
+            }
+            onClick={onChangeYear}
+          />
+          <Button
+            icon={<ChevronRightSvg />}
+            rounded
+            type="secondary"
+            onClick={goToNextMonth}
+          />
         </div>
-        <div className={`${stylesModule.days}`}>
-          {!(selectMonth || selectYear) && getEmptyBoxes(firstDay)}
-          {!(selectMonth || selectYear) && renderDays(daysInMonth)}
-          {selectYear && renderYears()}
-          {selectMonth && renderMonth()}
+        <div className={`${stylesModule.content}`}>
+          <div className={`${stylesModule.weekdays}`}>
+            <div>Pzt</div>
+            <div>Sal</div>
+            <div>Çar</div>
+            <div>Per</div>
+            <div>Cum</div>
+            <div>Cmt</div>
+            <div>Paz</div>
+          </div>
+          <div className={`${stylesModule.days}`}>
+            {!(selectMonth || selectYear) && getEmptyBoxes(firstDay)}
+            {!(selectMonth || selectYear) && renderDays(daysInMonth)}
+            {selectYear && renderYears()}
+            {selectMonth && renderMonth()}
+          </div>
         </div>
       </div>
-    </div>
+    )
   );
 };
 
@@ -215,6 +218,7 @@ Calendar.propTypes = {
   disabledRangeList: PropTypes.array,
   onChange: PropTypes.func,
   value: PropTypes.date,
+  open: PropTypes.bool,
   style: PropTypes.object,
 };
 

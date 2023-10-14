@@ -10,6 +10,7 @@ import Calendar from './components/Calendar/Calendar.js';
 import Checkbox from './components/Checkbox/Checkbox.js';
 import Modal from './components/Modal/Modal.js';
 import Editor from './components/Editor/Editor.js';
+import DateTime from './components/DateTime/DateTime.js';
 
 function App() {
   const [type, setType] = useState('primary');
@@ -18,6 +19,7 @@ function App() {
   const [pass, setPass] = useState('<b>sadasd</b>  asssss');
   const [d, setD] = useState(undefined);
   const [checked, setChecked] = useState(true);
+  const [date, setDate] = useState();
   return (
     <ThemeProvider>
       <div className="App">
@@ -33,13 +35,16 @@ function App() {
             alignItems="center"
             spacing={8}
           >
-            <Grid item={6}>
+            <Grid item={6} mbt>
               <Calendar
                 disabledRangeList={[]}
                 onChange={(e) => {
                   alert(JSON.stringify(e));
                 }}
               />
+            </Grid>
+            <Grid item={6}>
+              <DateTime value={date} onChange={setDate} label="DateTime" />
             </Grid>
             <Grid item={12}>
               <Checkbox

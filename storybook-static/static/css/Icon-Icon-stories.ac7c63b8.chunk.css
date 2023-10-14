@@ -129,18 +129,17 @@
 .Grid_container__ymXVK {
   display: flex;
   flex-wrap: wrap;
-  margin: calc(var(--spacing) * 0.25rem) calc(var(--spacing) * 0.125rem);
-  justify-content: flex-start;
-  padding-top: 1rem;
+  width: 100%;
+  flex: 1 1;
+  justify-content: space-between;
+  padding-top: 0.5rem;
   padding-bottom: 0.5rem;
   gap: calc(var(--spacing) * 0.04rem);
 }
 
 .Grid_gridItem__Y5opQ {
   display: flex;
-  flex-grow: var(--item);
-  max-width: calc(var(--item) * (100% / 12));
-  min-width: calc(var(--item) * (100% / 12) - 10px);
+  flex-basis: calc(var(--item) * 100% / 12 - 10px - var(--spacing) * 0.04rem);
   justify-content: var(--justifyContent);
   align-items: var(--alignItems);
 }
@@ -151,9 +150,15 @@
 
 .Grid_column__bbAHN {
   flex-direction: column;
+  gap: initial !important;
   justify-content: var(--justifyContent);
   align-items: var(--alignItems);
 }
 
+.Grid_mbt__oGfkL {
+  margin-bottom: 0.5rem;
+  margin-top: 0.5rem;
+}
 
-/*# sourceMappingURL=Icon-Icon-stories.7317e845.chunk.css.map*/
+
+/*# sourceMappingURL=Icon-Icon-stories.ac7c63b8.chunk.css.map*/

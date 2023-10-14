@@ -16,6 +16,7 @@ const Input = ({
   bordered,
   rounded,
   noShadow,
+  settings,
   ...props
 }) => {
   const theme = useTheme();
@@ -69,7 +70,7 @@ const Input = ({
             }`}
             style={styleVariables}
           >
-            <Grid item={inputSize && sizeControl >= 0 ? 11 : 12}>
+            <Grid item={(inputSize && sizeControl >= 0) || settings ? 11 : 12}>
               <input
                 className={`${styleModules.input} `}
                 style={{ ...styles, ...styleVariables }}
@@ -96,6 +97,7 @@ const Input = ({
                 </div>
               </Grid>
             )}
+            {settings ?? null}
           </Grid>
 
           {errorStatus && (
@@ -125,6 +127,7 @@ Input.propTypes = {
   bordered: PropTypes.bool,
   rounded: PropTypes.bool,
   noShadow: PropTypes.bool,
+  settings: PropTypes.any,
 };
 
 export default Input;
