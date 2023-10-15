@@ -12,7 +12,7 @@ import Modal from './components/Modal/Modal.js';
 import Editor from './components/Editor/Editor.js';
 import DateTime from './components/DateTime/DateTime.js';
 import Switch from './components/Switch/Switch.js';
-import useAlert from './components/Alert/useAlert.js';
+import { useAlert } from './components/Alert/useAlert.js';
 
 const App = () => {
   const [type, setType] = useState('primary');

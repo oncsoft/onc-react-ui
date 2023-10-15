@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import ReactDOM from 'react-dom';
 import Alert from './Alert';
-import ThemeProvider, { useTheme } from '../../utils/theme';
+import ThemeProvider from '../../utils/theme';
 import styleModules from './Alert.module.css';
 
-const useAlert = () => {
+export const useAlert = () => {
   const [alertVisible, setAlertVisible] = useState(false);
   const showAlert = (props) => {
     const alertElement = (
@@ -43,5 +43,3 @@ const useAlert = () => {
 
   return { showAlert, alertVisible };
 };
-
-export default useAlert;
