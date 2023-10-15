@@ -11,6 +11,7 @@ import Checkbox from './components/Checkbox/Checkbox.js';
 import Modal from './components/Modal/Modal.js';
 import Editor from './components/Editor/Editor.js';
 import DateTime from './components/DateTime/DateTime.js';
+import Switch from './components/Switch/Switch.js';
 
 function App() {
   const [type, setType] = useState('primary');
@@ -42,6 +43,8 @@ function App() {
                   alert(JSON.stringify(e));
                 }}
               />
+              <Switch checked={checked} onChange={setChecked} />
+              <Switch checked={checked} onChange={setChecked} type="round" />
             </Grid>
             <Grid item={6}>
               <DateTime value={date} onChange={setDate} label="DateTime" />
