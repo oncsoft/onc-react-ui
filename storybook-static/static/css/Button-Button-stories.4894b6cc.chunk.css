@@ -1,0 +1,42 @@
+.Button_button__wiIYs {
+  padding: calc(var(--paddingSize) * 0.75rem) 1.25rem
+    calc(var(--paddingSize) * 0.75rem) 1.25rem;
+  font-size: calc(var(--fontSize) * 1rem);
+  cursor: pointer;
+  border: medium none currentColor;
+  border: initial;
+  border-radius: 0.125rem;
+  transition: 0.4s ease;
+  box-shadow: 1px 2px 10px var(--shadowColor);
+  color: #ffffff;
+}
+
+.Button_icon__KeIH3 {
+  padding: 0.5rem !important;
+}
+
+.Button_primary__XYgy- {
+  background-color: var(--primaryColor);
+}
+
+.Button_secondary__QwN49 {
+  background-color: var(--secondaryColor);
+}
+
+.Button_rounded__\+9j5O {
+  border-radius: 1.25rem;
+}
+
+.Button_button__wiIYs:hover {
+  -webkit-filter: brightness(110%);
+          filter: brightness(110%);
+}
+
+.Button_button__wiIYs[disabled] {
+  background-color: var(--disabledColor);
+  color: #888;
+  cursor: not-allowed;
+}
+
+
+/*# sourceMappingURL=Button-Button-stories.4894b6cc.chunk.css.map*/
