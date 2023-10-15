@@ -12,8 +12,9 @@ import Modal from './components/Modal/Modal.js';
 import Editor from './components/Editor/Editor.js';
 import DateTime from './components/DateTime/DateTime.js';
 import Switch from './components/Switch/Switch.js';
+import useAlert from './components/Alert/useAlert.js';
 
-function App() {
+const App = () => {
   const [type, setType] = useState('primary');
   const [value, setValue] = useState('');
   const [user, setUser] = useState('');
@@ -21,6 +22,7 @@ function App() {
   const [d, setD] = useState(undefined);
   const [checked, setChecked] = useState(true);
   const [date, setDate] = useState();
+  const { showAlert } = useAlert();
   return (
     <ThemeProvider>
       <div className="App">
@@ -40,7 +42,12 @@ function App() {
               <Calendar
                 disabledRangeList={[]}
                 onChange={(e) => {
-                  alert(JSON.stringify(e));
+                  showAlert({
+                    message: 'Osman' + e,
+                    type: 'warning',
+                    delay: 1000,
+                    position: 'bottom-right',
+                  });
                 }}
               />
               <Switch checked={checked} onChange={setChecked} />
@@ -144,6 +151,6 @@ function App() {
       </div>
     </ThemeProvider>
   );
-}
+};
 
 export default App;

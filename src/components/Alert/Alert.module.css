@@ -1,0 +1,35 @@
+.notificationContainer {
+  background-color: var(--secondaryColor);
+  box-shadow: 0 0 0.5rem var(--shadowColor);
+}
+
+.notification {
+  color: #fff;
+  transition: all 0.5s;
+}
+
+.top-right {
+  top: 1rem;
+  right: 1rem;
+}
+
+.top-left {
+  top: 1rem;
+  left: 1rem;
+}
+
+.bottom-right {
+  bottom: 1rem;
+  right: 1rem;
+}
+
+.bottom-left {
+  bottom: 1rem;
+  left: 1rem;
+}
+
+.closeIcon {
+}
+
+.typeIcon {
+}
