@@ -1,0 +1,112 @@
+.Dialog_backdrop__SpLuM {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--backdropColor);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 100000;
+}
+
+.Dialog_dialog__PnMlh {
+  background: var(--secondaryColor);
+  border: 2px solid var(--primaryColor);
+  border-radius: 0.5rem;
+  box-shadow: 0 0 0.5rem var(--shadowColor);
+  width: var(--width);
+  height: var(--height);
+  position: relative;
+}
+
+h2 {
+  color: var(--primaryColor);
+}
+
+.Dialog_content__iWx0u {
+  overflow-y: auto;
+  width: 100%;
+  word-wrap: break-word;
+  color: var(--primaryColor);
+  height: calc(var(--height) - 7.5rem);
+  padding: 0.75rem;
+}
+
+.Grid_container__ymXVK {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  flex: 1 1;
+  justify-content: space-between;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  gap: calc(var(--spacing) * 0.04rem);
+}
+
+.Grid_gridItem__Y5opQ {
+  display: flex;
+  flex-basis: calc(var(--item) * 100% / 12 - 10px - var(--spacing) * 0.04rem);
+  justify-content: var(--justifyContent);
+  align-items: var(--alignItems);
+}
+
+.Grid_row__ql-JB {
+  flex-direction: row;
+}
+
+.Grid_column__bbAHN {
+  flex-direction: column;
+  gap: initial !important;
+  justify-content: var(--justifyContent);
+  align-items: var(--alignItems);
+}
+
+.Grid_mbt__oGfkL {
+  margin-bottom: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.Button_button__wiIYs {
+  padding: calc(var(--paddingSize) * 0.75rem) 1.25rem
+    calc(var(--paddingSize) * 0.75rem) 1.25rem;
+  font-size: calc(var(--fontSize) * 1rem);
+  cursor: pointer;
+  border: medium none currentColor;
+  border: initial;
+  border-radius: 0.125rem;
+  transition: 0.4s ease;
+  box-shadow: 1px 2px 10px var(--shadowColor);
+  color: #ffffff;
+}
+
+.Button_icon__KeIH3 {
+  padding: 0.5rem;
+}
+
+.Button_primary__XYgy- {
+  background-color: var(--primaryColor);
+}
+
+.Button_secondary__QwN49 {
+  background-color: var(--secondaryColor);
+}
+
+.Button_rounded__\+9j5O {
+  border-radius: 1.25rem;
+}
+
+.Button_button__wiIYs:hover {
+  -webkit-filter: brightness(110%);
+          filter: brightness(110%);
+}
+
+.Button_button__wiIYs[disabled] {
+  background-color: var(--disabledColor);
+  color: #888;
+  cursor: not-allowed;
+}
+
+
+/*# sourceMappingURL=Dialog-Dialog-stories.074c161f.chunk.css.map*/
