@@ -61,7 +61,11 @@ const DateTime = ({
           label={label}
           settings={
             <Grid item={1} alignItems={'flex-end'} justifyContent={'flex-end'}>
-              <Button icon={<CalendarSvg />} onClick={calendarOpen} />
+              <Button
+                style={{ padding: '0.2rem' }}
+                icon={<CalendarSvg />}
+                onClick={calendarOpen}
+              />
             </Grid>
           }
         />

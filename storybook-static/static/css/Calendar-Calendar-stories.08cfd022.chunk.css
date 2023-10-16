@@ -1,37 +1,72 @@
-.Alert_notificationContainer__458yK {
-  background-color: var(--secondaryColor);
-  box-shadow: 0 0 0.5rem var(--shadowColor);
+.Calendar_calendar__vKx\+D {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  border: 2px solid var(--secondaryColor);
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+  height: 20rem;
+  overflow-y: auto;
+  background: var(--primaryColor);
+  box-shadow: 0 0.5rem 1.5rem -0.5rem var(--shadowColor);
 }
 
-.Alert_notification__3X-4c {
+.Calendar_content__G3HTi {
+}
+
+.Calendar_navigation__SGO1J {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
   color: #fff;
-  transition: all 0.5s;
 }
 
-.Alert_top-right__CIoyu {
-  top: 1rem;
-  right: 1rem;
+.Calendar_navigation__SGO1J button {
+  border: none;
+  cursor: pointer;
+  color: #fff;
 }
 
-.Alert_top-left__RIEFA {
-  top: 1rem;
-  left: 1rem;
+.Calendar_weekdays__z26aC {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.3rem;
+  color: #fff;
 }
 
-.Alert_bottom-right__KQcBA {
-  bottom: 1rem;
-  right: 1rem;
+.Calendar_weekdays__z26aC div {
+  width: 14.28%;
+  padding: 0.3rem 0;
+  font-weight: bold;
+  text-align: center;
 }
 
-.Alert_bottom-left__W8HHW {
-  bottom: 1rem;
-  left: 1rem;
+.Calendar_days__3kmpT {
+  display: flex;
+  flex-wrap: wrap;
 }
 
-.Alert_closeIcon__03h4j {
+.Calendar_day__voALS {
+  width: 14.28%;
+  padding: 10px 0;
+  text-align: center;
+  cursor: pointer;
+  color: #fff;
 }
 
-.Alert_typeIcon__5m5zG {
+.Calendar_selected__nHJ7r {
+  background-color: var(--secondaryColor);
+  color: #fff;
+  border-radius: 1rem;
+}
+
+.Calendar_disabled__ohA1v {
+  cursor: not-allowed;
+  color: #aaa;
+}
+
+.Calendar_emptyDay__v52YQ {
+  width: 14.28%;
 }
 
 .Button_button__wiIYs {
@@ -48,7 +83,7 @@
 }
 
 .Button_icon__KeIH3 {
-  padding: 0.5rem !important;
+  padding: 0.5rem;
 }
 
 .Button_primary__XYgy- {
@@ -109,4 +144,4 @@
 }
 
 
-/*# sourceMappingURL=Alert-Alert-stories.01aa676d.chunk.css.map*/
+/*# sourceMappingURL=Calendar-Calendar-stories.08cfd022.chunk.css.map*/

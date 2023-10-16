@@ -21,13 +21,13 @@ const App = () => {
   const [user, setUser] = useState('');
   const [pass, setPass] = useState('<b>sadasd</b>  asssss');
   const [d, setD] = useState(undefined);
-  const [checked, setChecked] = useState(true);
+  const [checked, setChecked] = useState(false);
   const [date, setDate] = useState();
   const { showAlert } = useAlert();
   return (
     <ThemeProvider>
       <div className="App">
-        <Spinner text="Yükleniyor" type="spot" size="3rem" />
+        {checked && <Spinner text="Yükleniyor" type="spot" size="3rem" />}
         <Icon size="2rem">
           <AddSvg />
         </Icon>

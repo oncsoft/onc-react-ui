@@ -11,7 +11,7 @@
 }
 
 .eojMyyjC8xMB7i_VK7UP {
-  padding: 0.5rem !important;
+  padding: 0.5rem;
 }
 
 .cdc4_xoyu5lt350lFjqA {
@@ -1431,11 +1431,12 @@ input:checked + .ozKo2TZ_ev5T5WTQwWNI:before {
 }
 
 .c2yuS4NjaCYQOM81oY29 {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
+  overflow: hidden;
   background: var(--secondaryColor);
   opacity: 0.98;
   z-index: 1000000;

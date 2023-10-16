@@ -69,6 +69,7 @@ const Input = ({
               rounded ? styleModules.rounded : ''
             }`}
             style={styleVariables}
+            alignItems={'center'}
           >
             <Grid item={(inputSize && sizeControl >= 0) || settings ? 11 : 12}>
               <input
