@@ -9,9 +9,12 @@ export { default as Modal } from '../src/components/Modal/Modal';
 export { default as Editor } from '../src/components/Editor/Editor';
 export { default as DateTime } from '../src/components/DateTime/DateTime';
 export { default as Switch } from '../src/components/Switch/Switch';
+export { default as Alert } from '../src/components/Alert/Alert';
+export { default as Spinner } from '../src/components/Spinner/Spinner';
 
 export { default as ThemeProvider } from '../src/utils/theme';
 
 export { timeBasedUUID } from './utils/helper';
+export { useAlert } from '../src/components/Alert/useAlert';
 
 export * from '../src/components/Icons';

@@ -1,0 +1,52 @@
+.spinnerContainer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--secondaryColor);
+  opacity: 0.98;
+  z-index: 1000000;
+}
+
+.svgIcon {
+  animation-name: spin;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  animation-timing-function: cubic-bezier(0.12, 0.23, 0.85, 0.65);
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.text {
+  color: var(--primaryColor);
+  font-size: var(--size);
+  font-weight: 600;
+}
+
+.spot {
+  display: inline-block;
+  letter-spacing: 0.125rem;
+  box-sizing: border-box;
+  animation: spotlight 3s linear infinite alternate;
+}
+
+@keyframes spotlight {
+  0%,
+  20% {
+    opacity: 1;
+    letter-spacing: 0.125rem;
+  }
+  80%,
+  100% {
+    opacity: 0;
+    letter-spacing: 1rem;
+  }
+}

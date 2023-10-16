@@ -13,6 +13,7 @@ import Editor from './components/Editor/Editor.js';
 import DateTime from './components/DateTime/DateTime.js';
 import Switch from './components/Switch/Switch.js';
 import { useAlert } from './components/Alert/useAlert.js';
+import Spinner from './components/Spinner/Spinner.js';
 
 const App = () => {
   const [type, setType] = useState('primary');
@@ -26,6 +27,7 @@ const App = () => {
   return (
     <ThemeProvider>
       <div className="App">
+        <Spinner text="Yükleniyor" type="spot" size="3rem" />
         <Icon size="2rem">
           <AddSvg />
         </Icon>

@@ -2,7 +2,7 @@ import React, { memo, forwardRef } from 'react';
 import PropTypes from 'prop-types';
 import { useTheme } from '../../utils/theme';
 import styleModules from './Icon.module.css';
-const Icon = forwardRef(({ size = '1rem', type, children }, ref) => {
+const Icon = forwardRef(({ size = '1rem', type, children, className }, ref) => {
   const theme = useTheme();
   const styleVariables = {
     '--primaryColor': theme.primaryColor,
@@ -18,7 +18,7 @@ const Icon = forwardRef(({ size = '1rem', type, children }, ref) => {
             width: size,
             height: size,
             style: { ...styleVariables },
-            className: `${styleModules.icon} ${styleModules[type]}`,
+            className: `${styleModules.icon} ${styleModules[type]} ${className}`,
             preserveAspectRatio: 'none',
             version: '1.1',
           });
@@ -38,6 +38,7 @@ Icon.defaultProps = {
 Icon.propTypes = {
   size: PropTypes.string,
   type: PropTypes.oneOf(['primary', 'secondary', 'disabled', 'error']),
+  className: PropTypes.string,
   children: PropTypes.object,
 };
 
