@@ -14,6 +14,7 @@ import DateTime from './components/DateTime/DateTime.js';
 import Switch from './components/Switch/Switch.js';
 import { useAlert } from './components/Alert/useAlert.js';
 import Spinner from './components/Spinner/Spinner.js';
+import Dialog from './components/Dialog/Dialog.js';
 
 const App = () => {
   const [type, setType] = useState('primary');
@@ -28,10 +29,17 @@ const App = () => {
     <ThemeProvider>
       <div className="App">
         {checked && <Spinner text="Yükleniyor" type="spot" size="3rem" />}
+        <Dialog open title="sasas" actions={<Button label="Tamam" />}>
+          sadsadasdsad dasasdasdsadasdasdsad aasdasdasdasdasd sadsadasdsad
+          dasasdasdsadasdasdsad aasdasdasdasdasdsadsadasdsad
+          dasasdasdsadasdasdsad aasdasdasdasdasdsadsadasdsad
+          dasasdasdsadasdasdsad aasdasdasdasdasdsadsadasdsad
+          dasasdasdsadasdasdsad aasdasdasdasdasd
+        </Dialog>
         <Icon size="2rem">
           <AddSvg />
         </Icon>
-        <Modal open style={{ height: 400 }} heading={'Deneme'}>
+        <Modal open={false} style={{ height: 400 }} heading={'Deneme'}>
           <Editor value={pass ?? ''} onChange={setPass} />
           <Grid
             container

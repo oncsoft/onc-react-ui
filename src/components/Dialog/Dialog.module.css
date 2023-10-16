@@ -1,0 +1,35 @@
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--backdropColor);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 100000;
+}
+
+.dialog {
+  background: var(--secondaryColor);
+  border: 2px solid var(--primaryColor);
+  border-radius: 0.5rem;
+  box-shadow: 0 0 0.5rem var(--shadowColor);
+  width: var(--width);
+  height: var(--height);
+  position: relative;
+}
+
+h2 {
+  color: var(--primaryColor);
+}
+
+.content {
+  overflow-y: auto;
+  width: 100%;
+  word-wrap: break-word;
+  color: var(--primaryColor);
+  height: calc(var(--height) - 7.5rem);
+  padding: 0.75rem;
+}

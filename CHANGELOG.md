@@ -1,5 +1,9 @@
 ### Release
 
+**_Version 0.8.0_**
+
+- Dialog componenti eklendi.
+
 **_Version 0.7.3_**
 
 - DateTime calendar iconu padding size fix
