@@ -1,0 +1,10 @@
+.listContainer {
+  background: var(--primaryColor);
+  box-shadow: 0 0 1rem var(--shadowColor);
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.listContainer .listItem:last-child {
+  border-bottom: unset !important;
+}

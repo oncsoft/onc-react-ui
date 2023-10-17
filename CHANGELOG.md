@@ -1,5 +1,9 @@
 ### Release
 
+**_Version 0.9.0_**
+
+- List ve ListItem componentleri oluşturuldu.
+
 **_Version 0.8.0_**
 
 - Dialog componenti eklendi.

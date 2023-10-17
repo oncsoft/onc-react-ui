@@ -11,6 +11,9 @@ export { default as DateTime } from '../src/components/DateTime/DateTime';
 export { default as Switch } from '../src/components/Switch/Switch';
 export { default as Alert } from '../src/components/Alert/Alert';
 export { default as Spinner } from '../src/components/Spinner/Spinner';
+export { default as Dialog } from '../src/components/Dialog/Dialog';
+export { default as List } from '../src/components/List/List';
+export { default as ListItem } from '../src/components/ListItem/ListItem';
 
 export { default as ThemeProvider } from '../src/utils/theme';
 

@@ -1,0 +1,14 @@
+.listItem {
+  display: flex;
+  align-items: flex-start;
+  padding: 0.5rem;
+  border-bottom: 2px solid var(--borderColor);
+  background-color: var(--primaryColor);
+  color: white;
+  transition: 0.3sn ease;
+  cursor: pointer;
+}
+
+.listItem:hover {
+  background-color: var(--secondaryColor);
+}
