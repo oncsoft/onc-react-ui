@@ -6,13 +6,15 @@ import { SpinnerSvg } from '../Icons';
 import { useTheme } from '../../utils/theme';
 import Grid from '../Grid/Grid';
 
-const Spinner = ({ text, type = 'default', size = '1rem' }) => {
+const Spinner = ({ text, type = 'default', size = '1rem', style }) => {
   const theme = useTheme();
   const styleVariables = {
     '--primaryColor': theme.primaryColor,
     '--secondaryColor': theme.secondaryColor,
     '--size': size,
   };
+  const styles = { ...style, ...styleVariables };
+
   return (
     <Grid
       container
@@ -20,7 +22,7 @@ const Spinner = ({ text, type = 'default', size = '1rem' }) => {
       justifyContent={'center'}
       alignItems={'center'}
       className={`${styleModules.spinnerContainer}`}
-      style={styleVariables}
+      style={styles}
     >
       <Grid>
         <Icon size={size} className={`${styleModules.svgIcon}`}>
@@ -41,6 +43,7 @@ Spinner.propTypes = {
   text: PropTypes.string,
   type: PropTypes.oneOf(['default', 'spot']),
   size: PropTypes.oneOf(['1rem', '2rem', '3rem']),
+  style: PropTypes.style,
 };
 
 export default Spinner;

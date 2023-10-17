@@ -15,6 +15,7 @@ import Switch from './components/Switch/Switch.js';
 import { useAlert } from './components/Alert/useAlert.js';
 import Spinner from './components/Spinner/Spinner.js';
 import Dialog from './components/Dialog/Dialog.js';
+import VirtualList from './components/VirtualList/VirtualList.js';
 
 const App = () => {
   const [type, setType] = useState('primary');
@@ -25,11 +26,15 @@ const App = () => {
   const [checked, setChecked] = useState(false);
   const [date, setDate] = useState();
   const { showAlert } = useAlert();
+  const data = Array.from({ length: 1000 }, (_, i) => {
+    return <span key={i}>Item {i + 1} </span>;
+  });
   return (
     <ThemeProvider>
       <div className="App">
         {checked && <Spinner text="Yükleniyor" type="spot" size="3rem" />}
-        <Dialog open title="sasas" actions={<Button label="Tamam" />}>
+        <VirtualList data={data} itemHeight={40} containerHeight={400} />
+        <Dialog open={false} title="sasas" actions={<Button label="Tamam" />}>
           sadsadasdsad dasasdasdsadasdasdsad aasdasdasdasdasd sadsadasdsad
           dasasdasdsadasdasdsad aasdasdasdasdasdsadsadasdsad
           dasasdasdsadasdasdsad aasdasdasdasdasdsadsadasdsad

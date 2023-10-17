@@ -1,0 +1,8 @@
+.infiniteScrollContainer {
+  background-color: var(--secondaryColor);
+  color: white;
+}
+.child {
+  padding: 0.5rem;
+  background-color: inherit;
+}

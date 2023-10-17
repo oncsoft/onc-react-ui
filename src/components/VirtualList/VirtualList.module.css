@@ -1,0 +1,18 @@
+.virtualListContainer {
+  height: var(--containerHeight);
+  overflow: auto;
+  background: var(--primaryColor);
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+  color: white;
+}
+
+.content {
+  height: var(--contentHeight);
+}
+
+.item {
+  height: var(--itemHeight);
+  display: flex;
+  align-items: center;
+}

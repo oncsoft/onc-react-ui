@@ -1,5 +1,13 @@
 ### Release
 
+**_Version 0.11.0_**
+
+- İnfiniteScroll componenti eklendi .Scroll sonuna geldiğinde yeni sorgu yapılacak hale getirildi.
+
+**_Version 0.10.0_**
+
+- Büyük verilerde kullanılacak virtualList componenti eklendi.
+
 **_Version 0.9.0_**
 
 - List ve ListItem componentleri oluşturuldu.

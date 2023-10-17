@@ -14,6 +14,7 @@ export { default as Spinner } from '../src/components/Spinner/Spinner';
 export { default as Dialog } from '../src/components/Dialog/Dialog';
 export { default as List } from '../src/components/List/List';
 export { default as ListItem } from '../src/components/ListItem/ListItem';
+export { default as VirtualList } from '../src/components/VirtualList/VirtualList';
 
 export { default as ThemeProvider } from '../src/utils/theme';
 

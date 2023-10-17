@@ -1546,3 +1546,22 @@ h2 {
   background-color: var(--secondaryColor);
 }
 
+.sk9t4ktxa8eTllFr05aQ {
+  height: var(--containerHeight);
+  overflow: auto;
+  background: var(--primaryColor);
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+  color: white;
+}
+
+.CQxyF0AO7TBFAUHhFBWf {
+  height: var(--contentHeight);
+}
+
+.FA7nhtWNaO78G4GEnYeN {
+  height: var(--itemHeight);
+  display: flex;
+  align-items: center;
+}
+
