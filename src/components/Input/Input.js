@@ -17,6 +17,7 @@ const Input = ({
   rounded,
   noShadow,
   settings,
+  readOnly,
   ...props
 }) => {
   const theme = useTheme();
@@ -79,6 +80,7 @@ const Input = ({
                 value={value}
                 onChange={onChange}
                 disabled={disabled}
+                readOnly={readOnly}
                 {...props}
               />
             </Grid>
@@ -124,6 +126,7 @@ Input.propTypes = {
   error: PropTypes.string,
   type: PropTypes.oneOf(['text', 'number', 'password']),
   disabled: PropTypes.bool,
+  readOnly: PropTypes.bool,
   style: PropTypes.object,
   bordered: PropTypes.bool,
   rounded: PropTypes.bool,

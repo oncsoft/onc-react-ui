@@ -12,6 +12,7 @@ const Dropdown = ({
   noShadow,
   bordered,
   rounded,
+  notFoundText = 'Sonuç Bulunamadı.',
 }) => {
   const [innerValue, setInnerValue] = useState(value);
   const [isSearch, setIsSearch] = useState(false);
@@ -80,7 +81,7 @@ const Dropdown = ({
           })
         ) : (
           <div className={`${styleModules.option}`} style={styleVariables}>
-            Sonuç Bulunamadı
+            {notFoundText}
           </div>
         )}
       </div>
@@ -114,6 +115,7 @@ Dropdown.propTypes = {
   noShadow: PropTypes.bool,
   bordered: PropTypes.bool,
   rounded: PropTypes.bool,
+  notFoundText: PropTypes.string,
 };
 
 export default Dropdown;

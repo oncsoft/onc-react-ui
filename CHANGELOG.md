@@ -1,5 +1,17 @@
 ### Release
 
+**_Version 0.12.5_**
+
+- Peer dependencyden Dev dependency geçişler oldu.
+
+**_Version 0.12.4_**
+
+- DateTime onChange çalışmayacak hale getirildi.
+- Dropdown Sonuç Bulunamadı yazısı propsa taşındı.
+- InfiniteScrool yükleniyor yazısı propsa taşındı.
+- Button componentinde transparent type eklendi.
+- Calendar componentinde transparent type yıl seçme butonunda eklendi.
+
 **_Version 0.12.3_**
 
 - Infinite scroll üzerinde ana scrollda işlem yapma problemi giderildi.

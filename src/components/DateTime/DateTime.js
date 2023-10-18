@@ -59,12 +59,15 @@ const DateTime = ({
           value={value}
           type={'text'}
           label={label}
+          disabled={disabled}
+          readOnly={true}
           settings={
             <Grid item={1} alignItems={'flex-end'} justifyContent={'flex-end'}>
               <Button
                 style={{ padding: '0.2rem' }}
                 icon={<CalendarSvg />}
                 onClick={calendarOpen}
+                disabled={disabled}
               />
             </Grid>
           }

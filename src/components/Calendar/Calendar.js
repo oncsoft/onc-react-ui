@@ -180,6 +180,7 @@ const Calendar = ({
               currentMonth.getFullYear()
             }
             onClick={onChangeYear}
+            type="transparent"
           />
           <Button
             icon={<ChevronRightSvg />}

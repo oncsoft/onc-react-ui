@@ -25,7 +25,9 @@ const Story = (args) => {
     return <div key={timeBasedUUID()}>{item}</div>;
   };
   const fetchData = async () => {
-    setData((prev) => [...prev, ...newData]);
+    setTimeout(() => {
+      setData((prev) => [...prev, ...newData]);
+    }, 1000);
   };
 
   return (

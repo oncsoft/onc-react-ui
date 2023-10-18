@@ -22,6 +22,12 @@
   background-color: var(--secondaryColor);
 }
 
+.transparent {
+  background-color: transparent;
+  color: var(--secondaryColor);
+  box-shadow: none;
+}
+
 .rounded {
   border-radius: 1.25rem;
 }

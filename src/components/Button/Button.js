@@ -58,7 +58,7 @@ Button.propTypes = {
   size: PropTypes.oneOf(['sm', 'md', 'lg']),
   onClick: PropTypes.func,
   disabled: PropTypes.bool,
-  type: PropTypes.oneOf(['primary', 'secondary']),
+  type: PropTypes.oneOf(['primary', 'secondary', 'transparent']),
   rounded: PropTypes.bool,
   icon: PropTypes.any,
   noShadow: PropTypes.bool,

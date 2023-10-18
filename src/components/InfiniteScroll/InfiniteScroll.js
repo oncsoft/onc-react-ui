@@ -11,6 +11,7 @@ const InfiniteScroll = ({
   itemHeight,
   containerHeight,
   fetchData,
+  loadingText = 'Yükleniyor...',
 }) => {
   const lastItemRef = useRef();
   const theme = useTheme();
@@ -56,7 +57,7 @@ const InfiniteScroll = ({
 
           <div ref={lastItemRef}>
             <Spinner
-              text="Yükleniyor"
+              text={loadingText}
               type="spot"
               style={{ position: 'unset' }}
             />
@@ -73,6 +74,7 @@ InfiniteScroll.propTypes = {
   itemHeight: PropTypes.number,
   containerHeight: PropTypes.number,
   fetchData: PropTypes.func,
+  loadingText: PropTypes.string,
 };
 
 export default InfiniteScroll;
