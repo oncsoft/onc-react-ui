@@ -3,6 +3,7 @@
   "version": "0.12.5",
   "private": false,
   "main": "dist/index.js",
+  "author": "Osman Aşar",
   "scripts": {
     "start": "webpack serve --mode development",
     "build": "webpack --mode production --config webpack.prod.js",
