@@ -15,10 +15,12 @@ export { default as Dialog } from '../src/components/Dialog/Dialog';
 export { default as List } from '../src/components/List/List';
 export { default as ListItem } from '../src/components/ListItem/ListItem';
 export { default as VirtualList } from '../src/components/VirtualList/VirtualList';
+export { default as InfiniteScroll } from '../src/components/InfiniteScroll/InfiniteScroll';
 
 export { default as ThemeProvider } from '../src/utils/theme';
 
 export { timeBasedUUID } from './utils/helper';
+export { debouncedEvent, throttleEvent } from './utils/eventHelper';
 export { useAlert } from '../src/components/Alert/useAlert';
 
 export * from '../src/components/Icons';

@@ -1,5 +1,9 @@
 ### Release
 
+**_Version 0.11.1_**
+
+- İnfiniteScroll componenti export edildi.debounce ve throttle fonlsiyonları export edildi.
+
 **_Version 0.11.0_**
 
 - İnfiniteScroll componenti eklendi .Scroll sonuna geldiğinde yeni sorgu yapılacak hale getirildi.
