@@ -23,4 +23,9 @@ export { timeBasedUUID } from './utils/helper';
 export { debouncedEvent, throttleEvent } from './utils/eventHelper';
 export { useAlert } from '../src/components/Alert/useAlert';
 
+export { default as useWebWorker } from './hooks/useWebWorker';
+export { default as useInView } from './hooks/useInView';
+export { default as useStateRefCallback } from './hooks/useStateRefCallback';
+export { default as useMutationObserver } from './hooks/useMutationObserver';
+
 export * from '../src/components/Icons';

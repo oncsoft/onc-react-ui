@@ -1,5 +1,17 @@
 ### Release
 
+**_Version 0.12.2_**
+
+- build fix
+
+**_Version 0.12.1_**
+
+- build fix
+
+**_Version 0.12.0_**
+
+- useInView , useStateRefCallback , useWebWorker , useMutationObserver hookları eklendi
+
 **_Version 0.11.1_**
 
 - İnfiniteScroll componenti export edildi.debounce ve throttle fonlsiyonları export edildi.
