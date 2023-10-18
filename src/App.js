@@ -16,6 +16,8 @@ import { useAlert } from './components/Alert/useAlert.js';
 import Spinner from './components/Spinner/Spinner.js';
 import Dialog from './components/Dialog/Dialog.js';
 import VirtualList from './components/VirtualList/VirtualList.js';
+import { timeBasedUUID } from './utils/helper.js';
+import InfiniteScroll from './components/InfiniteScroll/InfiniteScroll.js';
 
 const App = () => {
   const [type, setType] = useState('primary');
@@ -29,9 +31,31 @@ const App = () => {
   const data = Array.from({ length: 1000 }, (_, i) => {
     return <span key={i}>Item {i + 1} </span>;
   });
+
+  const newData = Array.from({ length: 10 }, (_, i) => {
+    return <span key={i}>Item {i + 1} </span>;
+  });
+  const [datax, setData] = useState(newData);
+
+  const renderItem = (item) => {
+    return <div key={timeBasedUUID()}>{item}</div>;
+  };
+  const fetchData = async () => {
+    setTimeout(() => {
+      setData((prev) => [...prev, ...newData]);
+    }, 2000);
+  };
   return (
     <ThemeProvider>
       <div className="App">
+        <InfiniteScroll
+          fetchData={fetchData}
+          threshold={100}
+          data={datax}
+          renderItem={renderItem}
+          itemHeight={60}
+          containerHeight={400}
+        />
         {checked && <Spinner text="Yükleniyor" type="spot" size="3rem" />}
         <VirtualList data={data} itemHeight={40} containerHeight={400} />
         <Dialog open={false} title="sasas" actions={<Button label="Tamam" />}>

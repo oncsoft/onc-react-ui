@@ -1,5 +1,9 @@
 ### Release
 
+**_Version 0.12.3_**
+
+- Infinite scroll üzerinde ana scrollda işlem yapma problemi giderildi.
+
 **_Version 0.12.2_**
 
 - build fix

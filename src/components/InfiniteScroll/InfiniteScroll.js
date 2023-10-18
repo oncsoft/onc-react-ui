@@ -1,60 +1,41 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useEffect, useRef } from 'react';
 import PropTypes from 'prop-types';
 import styleModules from './InfiniteScroll.module.css';
-import { throttleEvent } from '../../utils/eventHelper';
 import Spinner from '../Spinner/Spinner';
 import { useTheme } from '../../utils/theme';
+import { useInView } from '../../hooks/useInView';
 
 const InfiniteScroll = ({
   data = [],
   renderItem,
   itemHeight,
   containerHeight,
-  threshold,
   fetchData,
 }) => {
   const lastItemRef = useRef();
   const theme = useTheme();
+  const isIntersecting =
+    useInView(lastItemRef, {
+      threshold: 0.1,
+      rootMargin: '1px',
+    }) ?? false;
   const styleVariables = {
     '--secondaryColor': theme.secondaryColor,
   };
-  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
-    const handleScroll = throttleEvent(() => {
-      if (!loading && isLastItemVisible()) {
-        loadMoreItems();
-      }
-    }, 100);
-
-    window.addEventListener('scroll', handleScroll);
-
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, [loading]);
-
-  const isLastItemVisible = () => {
-    const lastItemElement = lastItemRef.current;
-    if (!lastItemElement) return false;
-
-    const rect = lastItemElement.getBoundingClientRect();
-    const distanceToBottom = rect.top;
-
-    return distanceToBottom <= containerHeight + threshold;
-  };
+    if (isIntersecting) {
+      requestAnimationFrame(loadMoreItems);
+    }
+  }, [isIntersecting]);
 
   const loadMoreItems = () => {
-    setLoading(true);
-
-    fetchData().then(() => {
-      setLoading(false);
-    });
+    fetchData();
   };
 
   return (
     <div>
-      <div style={{ height: containerHeight }}>
+      <div style={{ height: containerHeight, overflow: 'auto' }}>
         <div
           className={styleModules.infiniteScrollContainer}
           style={{
@@ -91,7 +72,6 @@ InfiniteScroll.propTypes = {
   renderItem: PropTypes.func,
   itemHeight: PropTypes.number,
   containerHeight: PropTypes.number,
-  threshold: PropTypes.number,
   fetchData: PropTypes.func,
 };
 

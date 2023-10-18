@@ -1568,6 +1568,9 @@ h2 {
 .N5JVMmb_Jat0vNUqE_pN {
   background-color: var(--secondaryColor);
   color: white;
+  width: auto;
+  min-width: 50vw;
+  overflow: auto;
 }
 .T2nItg0A8WpR9mcKz9yV {
   padding: 0.5rem;
