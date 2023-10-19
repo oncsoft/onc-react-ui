@@ -19,6 +19,7 @@ import VirtualList from './components/VirtualList/VirtualList.js';
 import { timeBasedUUID } from './utils/helper.js';
 import InfiniteScroll from './components/InfiniteScroll/InfiniteScroll.js';
 
+let i = 1;
 const App = () => {
   const [type, setType] = useState('primary');
   const [value, setValue] = useState('');
@@ -40,9 +41,13 @@ const App = () => {
   const renderItem = (item) => {
     return <div key={timeBasedUUID()}>{item}</div>;
   };
-  const fetchData = async () => {
+  const [spinner, setSpinner] = useState(false);
+  const fetchData = () => {
+    setSpinner(true);
     setTimeout(() => {
-      setData((prev) => [...prev, ...newData]);
+      if (i <= 3) setData((prev) => [...prev, ...newData]);
+      i++;
+      setSpinner(false);
     }, 2000);
   };
   return (
@@ -50,11 +55,12 @@ const App = () => {
       <div className="App">
         <InfiniteScroll
           fetchData={fetchData}
-          threshold={100}
           data={datax}
           renderItem={renderItem}
           itemHeight={60}
           containerHeight={400}
+          spinner={spinner}
+          virtualized={true}
         />
         {checked && <Spinner text="Yükleniyor" type="spot" size="3rem" />}
         <VirtualList data={data} itemHeight={40} containerHeight={400} />

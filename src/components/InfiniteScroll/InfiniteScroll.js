@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import PropTypes from 'prop-types';
 import styleModules from './InfiniteScroll.module.css';
 import Spinner from '../Spinner/Spinner';
@@ -12,6 +12,8 @@ const InfiniteScroll = ({
   containerHeight,
   fetchData,
   loadingText = 'Yükleniyor...',
+  virtualized = false,
+  spinner = true,
 }) => {
   const lastItemRef = useRef();
   const theme = useTheme();
@@ -23,44 +25,80 @@ const InfiniteScroll = ({
   const styleVariables = {
     '--secondaryColor': theme.secondaryColor,
   };
+  const [startIndex, setStartIndex] = useState(0);
+  const [endIndex, setEndIndex] = useState(
+    Math.floor(containerHeight / itemHeight),
+  );
 
+  const containerRef = useRef();
+
+  const visibleData = virtualized ? data.slice(startIndex, endIndex) : data;
   useEffect(() => {
     if (isIntersecting) {
       requestAnimationFrame(loadMoreItems);
     }
   }, [isIntersecting]);
 
+  useEffect(() => {
+    handleScroll();
+  }, [data, containerHeight, itemHeight]);
+
   const loadMoreItems = () => {
     fetchData();
   };
 
+  const handleScroll = () => {
+    if (containerRef.current && virtualized) {
+      const { scrollTop } = containerRef.current;
+      setStartIndex(Math.floor(scrollTop / itemHeight));
+      setEndIndex(
+        Math.min(
+          data.length,
+          startIndex + Math.ceil(containerHeight / itemHeight),
+        ),
+      );
+    }
+  };
+
   return (
     <div>
-      <div style={{ height: containerHeight, overflow: 'auto' }}>
+      <div
+        ref={containerRef}
+        onScroll={handleScroll}
+        style={{ height: containerHeight, overflow: 'auto' }}
+      >
         <div
           className={styleModules.infiniteScrollContainer}
           style={{
-            height: data.length * itemHeight,
+            height:
+              visibleData.length < containerHeight / itemHeight - 1
+                ? containerHeight
+                : data.length * itemHeight,
             position: 'relative',
+            paddingTop: virtualized ? startIndex * itemHeight : 0,
             ...styleVariables,
           }}
         >
-          {data.map((item, index) => (
+          {visibleData.map((item, index) => (
             <div
               className={styleModules.child}
               key={index}
-              style={{ height: itemHeight }}
+              style={{
+                height: itemHeight,
+              }}
             >
               {renderItem(item)}
             </div>
           ))}
 
           <div ref={lastItemRef}>
-            <Spinner
-              text={loadingText}
-              type="spot"
-              style={{ position: 'unset' }}
-            />
+            {spinner && (
+              <Spinner
+                text={loadingText}
+                type="spot"
+                style={{ position: 'unset' }}
+              />
+            )}
           </div>
         </div>
       </div>
@@ -75,6 +113,8 @@ InfiniteScroll.propTypes = {
   containerHeight: PropTypes.number,
   fetchData: PropTypes.func,
   loadingText: PropTypes.string,
+  virtualized: PropTypes.bool,
+  spinner: PropTypes.bool,
 };
 
 export default InfiniteScroll;

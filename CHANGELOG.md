@@ -1,5 +1,9 @@
 ### Release
 
+**_Version 0.12.6_**
+
+- InfiniteScrool componenti virtualized propsu eklendi içindeki spinner kullanıcıya bırakıldı.
+
 **_Version 0.12.5_**
 
 - Peer dependencyden Dev dependency geçişler oldu.
