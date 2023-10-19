@@ -1,5 +1,9 @@
 ### Release
 
+**_Version 0.12.7_**
+
+- VirtualList başlangıçta gözükecek data sayısındaki hata giderildi.
+
 **_Version 0.12.6_**
 
 - InfiniteScrool componenti virtualized propsu eklendi içindeki spinner kullanıcıya bırakıldı.

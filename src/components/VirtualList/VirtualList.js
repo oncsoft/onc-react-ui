@@ -14,7 +14,9 @@ const VirtualList = ({
     type === 'primary' ? theme.secondaryColor : theme.primaryColor;
 
   const [startIndex, setStartIndex] = useState(0);
-  const [endIndex, setEndIndex] = useState(10);
+  const [endIndex, setEndIndex] = useState(
+    Math.ceil(containerHeight / itemHeight),
+  );
 
   const containerRef = useRef();
 
