@@ -1,5 +1,9 @@
 ### Release
 
+**_Version 0.13.0_**
+
+- İmageUpload componenti eklendi.
+
 **_Version 0.12.7_**
 
 - VirtualList başlangıçta gözükecek data sayısındaki hata giderildi.

@@ -1,0 +1,23 @@
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.imageContainer {
+  width: 10rem;
+  height: 10rem;
+  position: relative;
+  border: 2px solid var(--primaryColor);
+  margin-bottom: 2rem;
+}
+
+.gallery img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.gallery img.active {
+  transform: scale(1.2);
+}

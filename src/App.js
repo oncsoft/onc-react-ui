@@ -18,6 +18,7 @@ import Dialog from './components/Dialog/Dialog.js';
 import VirtualList from './components/VirtualList/VirtualList.js';
 import { timeBasedUUID } from './utils/helper.js';
 import InfiniteScroll from './components/InfiniteScroll/InfiniteScroll.js';
+import UploadImage from './components/UploadImage/UploadImage.js';
 
 let i = 1;
 const App = () => {
@@ -50,9 +51,14 @@ const App = () => {
       setSpinner(false);
     }, 2000);
   };
+  const handleImagesSelected = (e) => {
+    console.error(e);
+  };
   return (
     <ThemeProvider>
       <div className="App">
+        <UploadImage value={[]} onChange={handleImagesSelected} />
+
         <InfiniteScroll
           fetchData={fetchData}
           data={datax}

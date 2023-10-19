@@ -1583,3 +1583,27 @@ h2 {
   background-color: inherit;
 }
 
+.XVRbUEC210MxDHTvP6Ba {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+._kPNNdfYTtscmQRuVlLO {
+  width: 10rem;
+  height: 10rem;
+  position: relative;
+  border: 2px solid var(--primaryColor);
+  margin-bottom: 2rem;
+}
+
+.XVRbUEC210MxDHTvP6Ba img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.XVRbUEC210MxDHTvP6Ba img.MdcRi_RF0ExEjmAH8eEj {
+  transform: scale(1.2);
+}
+

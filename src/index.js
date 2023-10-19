@@ -16,6 +16,7 @@ export { default as List } from '../src/components/List/List';
 export { default as ListItem } from '../src/components/ListItem/ListItem';
 export { default as VirtualList } from '../src/components/VirtualList/VirtualList';
 export { default as InfiniteScroll } from '../src/components/InfiniteScroll/InfiniteScroll';
+export { default as UploadImage } from '../src/components/UploadImage/UploadImage';
 
 export { default as ThemeProvider } from '../src/utils/theme';
 
