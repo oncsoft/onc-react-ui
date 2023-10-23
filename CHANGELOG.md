@@ -1,5 +1,25 @@
 ### Release
 
+**_Version 0.15.0_**
+
+- ColorPicker componenti eklendi.
+
+**_Version 0.14.2_**
+
+- Input ve dropdown componentlerine placeholder eklendi.
+
+**_Version 0.14.1_**
+
+- TextArea componenti label propsu eklendi.
+
+**_Version 0.14.0_**
+
+- TextArea componenti eklendi.
+
+**_Version 0.13.1_**
+
+- InfiniteScroll componenti çift scroll problemi giderildi.
+
 **_Version 0.13.0_**
 
 - İmageUpload componenti eklendi.

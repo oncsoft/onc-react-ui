@@ -18,6 +18,7 @@ const Input = ({
   noShadow,
   settings,
   readOnly,
+  placeholder = 'Giriş Yapınız',
   ...props
 }) => {
   const theme = useTheme();
@@ -81,6 +82,7 @@ const Input = ({
                 onChange={onChange}
                 disabled={disabled}
                 readOnly={readOnly}
+                placeholder={placeholder}
                 {...props}
               />
             </Grid>
@@ -131,6 +133,7 @@ Input.propTypes = {
   bordered: PropTypes.bool,
   rounded: PropTypes.bool,
   noShadow: PropTypes.bool,
+  placeholder: PropTypes.string,
   settings: PropTypes.any,
 };
 

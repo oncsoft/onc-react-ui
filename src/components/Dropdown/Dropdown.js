@@ -12,6 +12,7 @@ const Dropdown = ({
   noShadow,
   bordered,
   rounded,
+  placeholder,
   notFoundText = 'Sonuç Bulunamadı.',
 }) => {
   const [innerValue, setInnerValue] = useState(value);
@@ -97,6 +98,7 @@ const Dropdown = ({
         noShadow={noShadow ?? false}
         bordered={bordered}
         rounded={rounded}
+        placeholder={placeholder}
         onBlur={() => {
           optionsRef.current.focus();
         }}
@@ -115,6 +117,7 @@ Dropdown.propTypes = {
   noShadow: PropTypes.bool,
   bordered: PropTypes.bool,
   rounded: PropTypes.bool,
+  placeholder: PropTypes.string,
   notFoundText: PropTypes.string,
 };
 

@@ -3,7 +3,6 @@
   color: white;
   width: auto;
   min-width: 50vw;
-  overflow: auto;
 }
 .child {
   padding: 0.5rem;

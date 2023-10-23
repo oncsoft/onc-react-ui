@@ -19,6 +19,8 @@ import VirtualList from './components/VirtualList/VirtualList.js';
 import { timeBasedUUID } from './utils/helper.js';
 import InfiniteScroll from './components/InfiniteScroll/InfiniteScroll.js';
 import UploadImage from './components/UploadImage/UploadImage.js';
+import TextArea from './components/TextArea/TextArea.js';
+import ColorPicker from './components/ColorPicker/ColorPicker.js';
 
 let i = 1;
 const App = () => {
@@ -30,6 +32,7 @@ const App = () => {
   const [checked, setChecked] = useState(false);
   const [date, setDate] = useState();
   const { showAlert } = useAlert();
+  const [color, setColor] = useState('#000');
   const data = Array.from({ length: 1000 }, (_, i) => {
     return <span key={i}>Item {i + 1} </span>;
   });
@@ -57,6 +60,8 @@ const App = () => {
   return (
     <ThemeProvider>
       <div className="App">
+        <ColorPicker value={color} onChange={(e) => setColor(e.target.value)} />
+        <TextArea rows={5} value={pass} onChange={setPass} rounded />
         <UploadImage value={[]} onChange={handleImagesSelected} />
 
         <InfiniteScroll
