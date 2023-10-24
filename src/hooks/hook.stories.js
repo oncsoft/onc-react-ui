@@ -7,6 +7,7 @@ import { useStateRefCallback } from './useStateRefCallback.js';
 import Button from '../components/Button/Button.js';
 import { useInView } from './useInView.js';
 import { useMutationObserver } from './useMutationObserver.js';
+import { useBrowserAndOs } from './useBrowserAndOs.js';
 
 // More on how to set up stories at: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
@@ -55,6 +56,8 @@ const Story = () => {
     options: { config: { attributes: true, style: true } }, // Opsiyonel olarak izleme seçenekleri
   });
 
+  const { browserName, osName } = useBrowserAndOs();
+
   return (
     <ThemeProvider>
       <Grid container direction="column" style={{ height: 900 }}>
@@ -83,6 +86,10 @@ const Story = () => {
             }}
             label={'Değer Değiştir'}
           />
+        </Grid>
+
+        <Grid mbt>
+          useBrowserAndOs : BrowserName: {browserName} , OsName={osName}
         </Grid>
 
         <div

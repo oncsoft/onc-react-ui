@@ -1,5 +1,9 @@
 ### Release
 
+**_Version 0.16.0_**
+
+- useBrowserAndOs hooku eklendi.
+
 **_Version 0.15.0_**
 
 - ColorPicker componenti eklendi.
