@@ -1,0 +1,36 @@
+/* Temel Popover stilleri */
+.popoverContainer {
+  display: inline-block;
+}
+
+.popover {
+  position: absolute;
+  background-color: var(--secondaryColor);
+  border: 2px solid var(--primaryColor);
+  color: white;
+  padding: 0.5rem;
+  z-index: 1000;
+  max-width: 5rem;
+  max-height: 5rem;
+}
+
+/* Popover pozisyonları */
+.top-left {
+  top: 0;
+  left: 0;
+}
+
+.top-right {
+  top: 0;
+  right: 0;
+}
+
+.bottom-left {
+  bottom: 0;
+  left: 0;
+}
+
+.bottom-right {
+  bottom: 0;
+  right: 0;
+}

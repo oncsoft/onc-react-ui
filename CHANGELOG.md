@@ -1,5 +1,9 @@
 ### Release
 
+**_Version 0.18.0_**
+
+- Popover componenti eklendi.
+
 **_Version 0.17.0_**
 
 - useOutsideClick hooku eklendi.Dropdown componenti üzerinde useOutsideClick hook eklendi.(fix-problem)

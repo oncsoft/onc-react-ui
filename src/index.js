@@ -19,6 +19,7 @@ export { default as InfiniteScroll } from '../src/components/InfiniteScroll/Infi
 export { default as UploadImage } from '../src/components/UploadImage/UploadImage';
 export { default as TextArea } from '../src/components/TextArea/TextArea';
 export { default as ColorPicker } from '../src/components/ColorPicker/ColorPicker';
+export { default as Popover } from '../src/components/Popover/Popover';
 
 export { default as ThemeProvider } from '../src/utils/theme';
 
@@ -30,5 +31,7 @@ export { default as useWebWorker } from './hooks/useWebWorker';
 export { default as useInView } from './hooks/useInView';
 export { default as useStateRefCallback } from './hooks/useStateRefCallback';
 export { default as useMutationObserver } from './hooks/useMutationObserver';
+export { default as useBrowserAndOs } from './hooks/useBrowserAndOs';
+export { default as useOutsideClick } from './hooks/useOutsideClick';
 
 export * from '../src/components/Icons';

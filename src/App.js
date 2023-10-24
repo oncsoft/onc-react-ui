@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
 import Button from './components/Button/Button.js';
 import Grid from './components/Grid/Grid.js';
 import ThemeProvider from './utils/theme.js';
@@ -21,6 +21,7 @@ import InfiniteScroll from './components/InfiniteScroll/InfiniteScroll.js';
 import UploadImage from './components/UploadImage/UploadImage.js';
 import TextArea from './components/TextArea/TextArea.js';
 import ColorPicker from './components/ColorPicker/ColorPicker.js';
+import Popover from './components/Popover/Popover.js';
 
 let i = 1;
 const App = () => {
@@ -57,10 +58,30 @@ const App = () => {
   const handleImagesSelected = (e) => {
     console.error(e);
   };
+
+  const [pop, setPop] = useState(true);
+  const ref1 = useRef();
   return (
     <ThemeProvider>
       <div className="App">
-        <ColorPicker value={color} onChange={(e) => setColor(e.target.value)} />
+        <button
+          ref={ref1}
+          style={{ width: '100%', marginTop: 100 }}
+          onClick={(e) => {
+            setPop(true);
+          }}
+        >
+          asdad
+        </button>
+        <Popover
+          open={pop}
+          setOpen={setPop}
+          targetRef={ref1}
+          position="top-right"
+        >
+          Osman Aşar
+        </Popover>
+
         <TextArea rows={5} value={pass} onChange={setPass} rounded />
         <UploadImage value={[]} onChange={handleImagesSelected} />
 
@@ -73,6 +94,7 @@ const App = () => {
           spinner={spinner}
           virtualized={true}
         />
+
         {checked && <Spinner text="Yükleniyor" type="spot" size="3rem" />}
         <VirtualList data={data} itemHeight={40} containerHeight={400} />
         <Dialog open={false} title="sasas" actions={<Button label="Tamam" />}>

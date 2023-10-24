@@ -26,6 +26,7 @@ const Button = ({
   icon,
   noShadow,
   style = {},
+  ref,
 }) => {
   const theme = useTheme();
   const styles = {
@@ -40,6 +41,7 @@ const Button = ({
 
   return (
     <button
+      ref={ref}
       className={`${styleModules.button} ${styleModules[type ?? 'primary']} ${
         rounded ? styleModules.rounded : ''
       } ${icon ? styleModules.icon : ''}`}
@@ -63,6 +65,7 @@ Button.propTypes = {
   icon: PropTypes.any,
   noShadow: PropTypes.bool,
   style: PropTypes.object,
+  ref: PropTypes.ref,
 };
 
 export default Button;
