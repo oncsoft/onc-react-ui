@@ -8,6 +8,7 @@ import Button from '../components/Button/Button.js';
 import { useInView } from './useInView.js';
 import { useMutationObserver } from './useMutationObserver.js';
 import { useBrowserAndOs } from './useBrowserAndOs.js';
+import { useOutsideClick } from './useOutsideClick.js';
 
 // More on how to set up stories at: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
@@ -58,6 +59,10 @@ const Story = () => {
 
   const { browserName, osName } = useBrowserAndOs();
 
+  useOutsideClick(ref, () => {
+    alert('Kırmızı alan dışına tıklandı.');
+  });
+
   return (
     <ThemeProvider>
       <Grid container direction="column" style={{ height: 900 }}>
@@ -90,6 +95,11 @@ const Story = () => {
 
         <Grid mbt>
           useBrowserAndOs : BrowserName: {browserName} , OsName={osName}
+        </Grid>
+
+        <Grid mbt>
+          useOutsideClick : Kırmızı alan dışına tıklandığında ekrana uyarı
+          basacaktır.
         </Grid>
 
         <div

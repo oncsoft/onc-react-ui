@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import Input from '../Input/Input.js';
 import styleModules from './Dropdown.module.css';
 import { useTheme } from '../../utils/theme';
+import { useOutsideClick } from '../../hooks/useOutsideClick.js';
 
 const Dropdown = ({
   label,
@@ -12,7 +13,7 @@ const Dropdown = ({
   noShadow,
   bordered,
   rounded,
-  placeholder,
+  placeholder = 'Giriş Yapınız',
   notFoundText = 'Sonuç Bulunamadı.',
 }) => {
   const [innerValue, setInnerValue] = useState(value);
@@ -44,7 +45,6 @@ const Dropdown = ({
 
   const onSelectOption = (option) => (e) => {
     e.stopPropagation();
-    console.error(option);
     onSelect(option);
     requestAnimationFrame(setOpenStatus(false));
   };
@@ -89,6 +89,8 @@ const Dropdown = ({
     );
   }, [data, open, innerValue]);
 
+  useOutsideClick(containerRef, setOpenStatus(false));
+
   return (
     <div className={`${styleModules.dropdownContainer}`} ref={containerRef}>
       <Input
@@ -99,9 +101,6 @@ const Dropdown = ({
         bordered={bordered}
         rounded={rounded}
         placeholder={placeholder}
-        onBlur={() => {
-          optionsRef.current.focus();
-        }}
         onClick={setOpenStatus(true)}
       />
       {renderOptions}
