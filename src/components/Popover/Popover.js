@@ -1,5 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
-import ReactDOM from 'react-dom';
+import React, { useState, useEffect, useRef, useLayoutEffect } from 'react';
 import PropTypes from 'prop-types';
 import { useOutsideClick } from '../../hooks/useOutsideClick';
 import styleModules from './Popover.module.css';
@@ -41,7 +40,7 @@ const Popover = ({
     }
   }, [open, delayClose]);
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     if (popoverRef.current && targetRef.current) {
       const triggerRect = targetRef.current.getBoundingClientRect();
       const popoverRect = popoverRef.current.getBoundingClientRect();
@@ -89,11 +88,10 @@ const Popover = ({
     </div>
   );
 
-  return ReactDOM.createPortal(
+  return (
     <div className={`${styleModules.popoverContainer}`} style={stylesVariables}>
       {popoverContent}
-    </div>,
-    targetRef?.current?.parentElement ?? document.body,
+    </div>
   );
 };
 

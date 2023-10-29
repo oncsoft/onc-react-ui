@@ -1,5 +1,17 @@
 ### Release
 
+**_Version 0.21.1_**
+
+- fix default itemHeight infinite table
+
+**_Version 0.21.0_**
+
+- Virtualized infinite table componenti eklendi.(Eksiklikler giderilecek)
+
+**_Version 0.20.1_**
+
+- Button default name eklendi.
+
 **_Version 0.20.0_**
 
 - Themeya göre ekranın scroll görünümleri düzenlendi.

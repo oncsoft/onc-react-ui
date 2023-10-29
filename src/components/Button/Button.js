@@ -17,7 +17,7 @@ const sizes = {
   },
 };
 const Button = ({
-  label,
+  label = 'Button',
   size,
   onClick,
   disabled,

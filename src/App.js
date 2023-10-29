@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import Button from './components/Button/Button.js';
 import Grid from './components/Grid/Grid.js';
 import ThemeProvider from './utils/theme.js';
@@ -22,8 +22,10 @@ import UploadImage from './components/UploadImage/UploadImage.js';
 import TextArea from './components/TextArea/TextArea.js';
 import ColorPicker from './components/ColorPicker/ColorPicker.js';
 import Popover from './components/Popover/Popover.js';
+import InfiniteTable from './components/InfiniteTable/InfiniteTable.js';
 
 let i = 1;
+
 const App = () => {
   const [type, setType] = useState('primary');
   const [value, setValue] = useState('');
@@ -61,6 +63,50 @@ const App = () => {
 
   const [pop, setPop] = useState(false);
   const ref1 = useRef();
+  const [sampleData, setSampleData] = useState([
+    {
+      id: 1,
+      name: 'John Doesadasdsa sadasda sdsadas dasd sda sa d sa',
+      email: 'john@example.com',
+      age: 30,
+    },
+    { id: 2, name: 'Jane Smith', email: 'jane@example.com', age: 25 },
+    // Add more data here...
+  ]);
+
+  // Sample data
+  const sampleData2 = [
+    { id: 1, name: 'John Doe', email: 'john@example.com', age: 30 },
+    { id: 2, name: 'Jane Smith', email: 'jane@example.com', age: 25 },
+    // Add more data here...
+  ];
+
+  // Define columns for the table
+  const columns = [
+    { key: 'id', header: 'ID' },
+    { key: 'name', header: 'Name' },
+    { key: 'email', header: 'Email' },
+    { key: 'age', header: 'Age' },
+    // Add more columns here...
+  ];
+
+  // Function to simulate fetching more data
+  const fetchMoreData = () => {
+    // Simulate an API call or data fetching logic here
+    // For this example, we'll just add more sample data
+    const newData = [
+      { id: 3, name: 'Alice Johnson', email: 'alice@example.com', age: 28 },
+      {
+        id: 4,
+        name: 'Bob Wilsonsadasd asdasdasdasdsadad asdsadasdsasdad',
+        email: 'bob@example.com',
+        age: 35,
+      },
+      // Add more data here...
+    ];
+
+    setSampleData((current) => [...current, ...sampleData2, ...newData]);
+  };
   return (
     <ThemeProvider>
       <div className="App">
@@ -73,6 +119,11 @@ const App = () => {
         >
           asdad
         </button>
+        <InfiniteTable
+          data={sampleData}
+          columns={columns}
+          fetchData={fetchMoreData}
+        />
         <Popover
           open={pop}
           setOpen={setPop}

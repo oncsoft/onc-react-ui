@@ -87,7 +87,7 @@ const InfiniteScroll = ({
                 height: itemHeight,
               }}
             >
-              {renderItem(item)}
+              {renderItem(item, index)}
             </div>
           ))}
 

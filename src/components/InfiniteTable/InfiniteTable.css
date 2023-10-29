@@ -1,0 +1,31 @@
+.table-container {
+  border: 1px solid var(--secondary);
+  max-height: 400px;
+  overflow: auto;
+  position: relative;
+}
+
+.table-header {
+  display: flex;
+  position: sticky;
+  top: 0;
+  background-color: var(--primary);
+  z-index: 1;
+  color: white;
+}
+
+.table-row {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
+}
+
+.table-cell {
+  flex: 1;
+  padding: 8px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  position: relative;
+}
