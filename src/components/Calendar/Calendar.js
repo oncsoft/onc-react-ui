@@ -171,6 +171,7 @@ const Calendar = ({
           <Button
             icon={<ChevronLeftSvg />}
             rounded
+            label=""
             type="secondary"
             onClick={goToPreviousMonth}
           />
@@ -185,6 +186,7 @@ const Calendar = ({
           <Button
             icon={<ChevronRightSvg />}
             rounded
+            label=""
             type="secondary"
             onClick={goToNextMonth}
           />

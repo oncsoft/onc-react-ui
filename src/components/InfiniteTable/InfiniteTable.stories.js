@@ -22,6 +22,20 @@ const Story = (args) => {
       age: 30,
     },
     { id: 2, name: 'Jane Smith', email: 'jane@example.com', age: 25 },
+    {
+      id: 1,
+      name: 'John Doesadasdsa sadasda sdsadas dasd sda sa d sa',
+      email: 'john@example.com',
+      age: 30,
+    },
+    { id: 2, name: 'Jane Smith', email: 'jane@example.com', age: 25 },
+    {
+      id: 1,
+      name: 'John Doesadasdsa sadasda sdsadas dasd sda sa d sa',
+      email: 'john@example.com',
+      age: 30,
+    },
+    { id: 2, name: 'Jane Smith', email: 'jane@example.com', age: 25 },
     // Add more data here...
   ]);
 

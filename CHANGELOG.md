@@ -1,5 +1,13 @@
 ### Release
 
+**_Version 0.21.3_**
+
+- fix storybook button label problem
+
+**_Version 0.21.2_**
+
+- infinite table storybook initial data fix
+
 **_Version 0.21.1_**
 
 - fix default itemHeight infinite table

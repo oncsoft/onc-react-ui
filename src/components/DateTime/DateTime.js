@@ -75,6 +75,7 @@ const DateTime = ({
               <Button
                 style={{ padding: '0.2rem' }}
                 icon={<CalendarSvg />}
+                label=""
                 onClick={calendarOpen}
                 disabled={disabled}
               />
