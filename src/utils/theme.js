@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useLayoutEffect } from 'react';
 import PropTypes from 'prop-types';
 import defaultTheme from './defaultTheme.js';
 
@@ -10,6 +10,13 @@ export const useTheme = () => {
 
 const ThemeProvider = ({ children, theme }) => {
   const selectedTheme = theme || defaultTheme;
+  useLayoutEffect(() => {
+    const root = document.documentElement;
+
+    root.style.setProperty('--primary', selectedTheme.primaryColor);
+    root.style.setProperty('--secondary', selectedTheme.secondaryColor);
+  }, []);
+
   return (
     <ThemeContext.Provider value={selectedTheme}>
       {children}

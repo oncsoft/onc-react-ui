@@ -8,8 +8,6 @@ export default {
   title: 'Popover',
   component: Popover,
   parameters: {},
-  // This component will have an automatically generated Autodocs entry: https://storybook.js.org/docs/react/writing-docs/autodocs
-  tags: ['autodocs'],
   // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
   argTypes: {},
 };
@@ -25,7 +23,13 @@ const Story = (args) => {
         style={{ width: '100%' }}
         onClick={() => setOpen(true)}
       ></Button>
-      <Popover {...args} targetRef={ref} open={open} setOpen={setOpen}>
+      <Popover
+        {...args}
+        targetRef={ref}
+        open={open}
+        setOpen={setOpen}
+        position="bottom-right"
+      >
         Popover deneme
       </Popover>
     </ThemeProvider>
@@ -33,21 +37,3 @@ const Story = (args) => {
 };
 
 export const Docs = Story.bind({});
-
-export const Primary = (args) => {
-  const [open, setOpen] = useState(false);
-  const ref = useRef();
-  return (
-    <ThemeProvider>
-      <Button
-        ref={ref}
-        label={'Popover Aç'}
-        style={{ width: '100%' }}
-        onClick={() => setOpen(true)}
-      ></Button>
-      <Popover {...args} targetRef={ref} open={open} setOpen={setOpen}>
-        Popover deneme
-      </Popover>
-    </ThemeProvider>
-  );
-};

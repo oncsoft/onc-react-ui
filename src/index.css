@@ -27,3 +27,104 @@ code {
     font-size: 20px;
   }
 }
+
+html::-webkit-scrollbar-thumb,
+body::-webkit-scrollbar-thumb,
+button::-webkit-scrollbar-thumb,
+div::-webkit-scrollbar-thumb,
+input::-webkit-scrollbar-thumb,
+textarea::-webkit-scrollbar-thumb,
+span::-webkit-scrollbar-thumb,
+applet::-webkit-scrollbar-thumb,
+object::-webkit-scrollbar-thumb,
+iframe::-webkit-scrollbar-thumb,
+h1::-webkit-scrollbar-thumb,
+h2::-webkit-scrollbar-thumb,
+h3::-webkit-scrollbar-thumb,
+h4::-webkit-scrollbar-thumb,
+h5::-webkit-scrollbar-thumb,
+h6::-webkit-scrollbar-thumb,
+p::-webkit-scrollbar-thumb,
+blockquote::-webkit-scrollbar-thumb,
+pre::-webkit-scrollbar-thumb,
+a::-webkit-scrollbar-thumb,
+abbr::-webkit-scrollbar-thumb,
+acronym::-webkit-scrollbar-thumb,
+address::-webkit-scrollbar-thumb,
+big::-webkit-scrollbar-thumb,
+cite::-webkit-scrollbar-thumb,
+code::-webkit-scrollbar-thumb,
+del::-webkit-scrollbar-thumb,
+dfn::-webkit-scrollbar-thumb,
+em::-webkit-scrollbar-thumb,
+img::-webkit-scrollbar-thumb,
+ins::-webkit-scrollbar-thumb,
+kbd::-webkit-scrollbar-thumb,
+q::-webkit-scrollbar-thumb,
+s::-webkit-scrollbar-thumb,
+samp::-webkit-scrollbar-thumb,
+small::-webkit-scrollbar-thumb,
+strike::-webkit-scrollbar-thumb,
+strong::-webkit-scrollbar-thumb,
+sub::-webkit-scrollbar-thumb,
+sup::-webkit-scrollbar-thumb,
+tt::-webkit-scrollbar-thumb,
+var::-webkit-scrollbar-thumb,
+b::-webkit-scrollbar-thumb,
+u::-webkit-scrollbar-thumb,
+i::-webkit-scrollbar-thumb,
+center::-webkit-scrollbar-thumb,
+dl::-webkit-scrollbar-thumb,
+dt::-webkit-scrollbar-thumb,
+dd::-webkit-scrollbar-thumb,
+ol::-webkit-scrollbar-thumb,
+ul::-webkit-scrollbar-thumb,
+li::-webkit-scrollbar-thumb,
+fieldset::-webkit-scrollbar-thumb,
+form::-webkit-scrollbar-thumb,
+label::-webkit-scrollbar-thumb,
+legend::-webkit-scrollbar-thumb,
+table::-webkit-scrollbar-thumb,
+caption::-webkit-scrollbar-thumb,
+tbody::-webkit-scrollbar-thumb,
+tfoot::-webkit-scrollbar-thumb,
+thead::-webkit-scrollbar-thumb,
+tr::-webkit-scrollbar-thumb,
+th::-webkit-scrollbar-thumb,
+td::-webkit-scrollbar-thumb,
+article::-webkit-scrollbar-thumb,
+aside::-webkit-scrollbar-thumb,
+canvas::-webkit-scrollbar-thumb,
+details::-webkit-scrollbar-thumb,
+embed::-webkit-scrollbar-thumb,
+figure::-webkit-scrollbar-thumb,
+figcaption::-webkit-scrollbar-thumb,
+footer::-webkit-scrollbar-thumb,
+header::-webkit-scrollbar-thumb,
+hgroup::-webkit-scrollbar-thumb,
+menu::-webkit-scrollbar-thumb,
+nav::-webkit-scrollbar-thumb,
+output::-webkit-scrollbar-thumb,
+ruby::-webkit-scrollbar-thumb,
+section::-webkit-scrollbar-thumb,
+summary::-webkit-scrollbar-thumb,
+time::-webkit-scrollbar-thumb,
+mark::-webkit-scrollbar-thumb,
+audio::-webkit-scrollbar-thumb,
+video::-webkit-scrollbar-thumb {
+  border: 1px solid var(--secondary);
+  background: var(--primary);
+  border-radius: 0.5rem;
+}
+
+::-webkit-scrollbar {
+  width: 0.5rem;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--primary);
+}
+
+::-webkit-scrollbar-track {
+  background: var(--secondary);
+}

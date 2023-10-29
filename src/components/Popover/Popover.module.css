@@ -7,6 +7,8 @@
   position: absolute;
   background-color: var(--secondaryColor);
   border: 2px solid var(--primaryColor);
+  border-radius: 0.25rem;
+  box-shadow: 0 0.5rem 1.5rem -0.5rem var(--shadowColor);
   color: white;
   padding: 0.5rem;
   z-index: 1000;

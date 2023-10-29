@@ -4,7 +4,15 @@ import PropTypes from 'prop-types';
 import { useOutsideClick } from '../../hooks/useOutsideClick';
 import styleModules from './Popover.module.css';
 import { useTheme } from '../../utils/theme';
-const Popover = ({ children, position, open, setOpen, targetRef }) => {
+const Popover = ({
+  children,
+  position,
+  open,
+  setOpen,
+  targetRef,
+  delayClose,
+  style = {},
+}) => {
   const theme = useTheme();
   const stylesVariables = {
     '--primaryColor': theme.primaryColor,
@@ -18,8 +26,20 @@ const Popover = ({ children, position, open, setOpen, targetRef }) => {
     setOpen(status);
   };
 
-  useOutsideClick(targetRef, setOpenStatus(false));
-  useOutsideClick(popoverRef, setOpenStatus(false));
+  if (!delayClose) {
+    useOutsideClick(targetRef, setOpenStatus(false));
+    useOutsideClick(popoverRef, setOpenStatus(false));
+  }
+
+  useEffect(() => {
+    if (open && delayClose) {
+      const closeTimer = setTimeout(() => {
+        setOpen(false);
+      }, delayClose);
+
+      return () => clearTimeout(closeTimer);
+    }
+  }, [open, delayClose]);
 
   useEffect(() => {
     if (popoverRef.current && targetRef.current) {
@@ -62,6 +82,7 @@ const Popover = ({ children, position, open, setOpen, targetRef }) => {
         top: popoverPosition.top,
         left: popoverPosition.left,
         ...stylesVariables,
+        ...style,
       }}
     >
       {children}
@@ -72,7 +93,7 @@ const Popover = ({ children, position, open, setOpen, targetRef }) => {
     <div className={`${styleModules.popoverContainer}`} style={stylesVariables}>
       {popoverContent}
     </div>,
-    targetRef.current?.parentElement ?? document.body,
+    targetRef?.current?.parentElement ?? document.body,
   );
 };
 
@@ -87,6 +108,8 @@ Popover.propTypes = {
   ]),
   open: PropTypes.bool,
   setOpen: PropTypes.func,
+  style: PropTypes.style,
+  delayClose: PropTypes.number,
 };
 
 export default Popover;

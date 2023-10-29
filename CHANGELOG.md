@@ -1,5 +1,29 @@
 ### Release
 
+**_Version 0.20.0_**
+
+- Themeya göre ekranın scroll görünümleri düzenlendi.
+
+**_Version 0.19.0_**
+
+- Popover componenti tooltip gibi çalıştıracak delayClose propsu eklendi.
+
+**_Version 0.18.4_**
+
+- Popover style node'a eklendi.
+
+**_Version 0.18.3_**
+
+- Popover style verebilmek adına props eklendi.
+
+**_Version 0.18.2_**
+
+- Popover shadow eklendi.
+
+**_Version 0.18.1_**
+
+- DateTime outside click close
+
 **_Version 0.18.0_**
 
 - Popover componenti eklendi.

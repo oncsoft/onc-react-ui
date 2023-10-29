@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
 import PropTypes from 'prop-types';
 import { useTheme } from '../../utils/theme.js';
 import styleModules from './DateTime.module.css';
@@ -7,6 +7,7 @@ import Button from '../Button/Button.js';
 import Calendar from '../Calendar/Calendar.js';
 import CalendarSvg from '../Icons/CalendarSvg.js';
 import Input from '../Input/Input.js';
+import { useOutsideClick } from '../../hooks/useOutsideClick.js';
 
 const DateTime = ({
   label,
@@ -19,6 +20,7 @@ const DateTime = ({
   noShadow,
 }) => {
   const [calendar, setCalendar] = useState(false);
+  const calendarRef = useRef();
   const theme = useTheme();
 
   const errorStatus = error;
@@ -42,14 +44,21 @@ const DateTime = ({
     setCalendar(true);
   };
 
-  const calendarOnChange = (date) => {
-    onChange(date);
+  const calendarClose = () => {
     setCalendar(false);
   };
+
+  const calendarOnChange = (date) => {
+    onChange(date);
+    calendarClose();
+  };
+
+  useOutsideClick(calendarRef, calendarClose);
 
   return (
     <>
       <div
+        ref={calendarRef}
         className={`${styleModules.dateTimeContainer} ${
           disabled ? styleModules.disabled : ''
         } `}

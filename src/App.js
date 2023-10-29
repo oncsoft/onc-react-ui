@@ -59,7 +59,7 @@ const App = () => {
     console.error(e);
   };
 
-  const [pop, setPop] = useState(true);
+  const [pop, setPop] = useState(false);
   const ref1 = useRef();
   return (
     <ThemeProvider>
@@ -77,7 +77,8 @@ const App = () => {
           open={pop}
           setOpen={setPop}
           targetRef={ref1}
-          position="top-right"
+          position="top-left"
+          delayClose={2000}
         >
           Osman Aşar
         </Popover>
