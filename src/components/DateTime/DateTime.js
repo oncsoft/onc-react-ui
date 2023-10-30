@@ -7,7 +7,7 @@ import Button from '../Button/Button.js';
 import Calendar from '../Calendar/Calendar.js';
 import CalendarSvg from '../Icons/CalendarSvg.js';
 import Input from '../Input/Input.js';
-import { useOutsideClick } from '../../hooks/useOutsideClick.js';
+import useOutsideClick from '../../hooks/useOutsideClick.js';
 
 const DateTime = ({
   label,

@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import Input from '../Input/Input.js';
 import styleModules from './Dropdown.module.css';
 import { useTheme } from '../../utils/theme';
-import { useOutsideClick } from '../../hooks/useOutsideClick.js';
+import useOutsideClick from '../../hooks/useOutsideClick.js';
 
 const Dropdown = ({
   label,

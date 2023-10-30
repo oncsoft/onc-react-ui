@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 
+import PropTypes from 'prop-types';
 const useInView = (target, options = {}) => {
   const [isIntersecting, setIsIntersecting] = useState(false);
   const [observer, setObserver] = useState(null);
@@ -24,6 +25,11 @@ const useInView = (target, options = {}) => {
   }, []);
 
   return isIntersecting;
+};
+
+useInView.propTypes = {
+  target: PropTypes.ref,
+  options: PropTypes.object,
 };
 
 export default useInView;

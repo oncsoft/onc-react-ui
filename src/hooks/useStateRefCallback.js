@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
-
+import PropTypes from 'prop-types';
 const useStateRefCallback = (initialState) => {
   const [state, setState] = useState(initialState);
 
@@ -28,6 +28,10 @@ const useStateRefCallback = (initialState) => {
   }, [state]);
 
   return [state, _setState, valueRef];
+};
+
+useStateRefCallback.propTypes = {
+  initialState: PropTypes.any,
 };
 
 export default useStateRefCallback;

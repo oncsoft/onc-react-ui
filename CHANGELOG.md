@@ -1,5 +1,13 @@
 ### Release
 
+**_Version 0.21.8_**
+
+- Other components hook usage problem fix
+
+**_Version 0.21.7_**
+
+- Hook propTypes added
+
 **_Version 0.21.6_**
 
 - Hook change named export to default export

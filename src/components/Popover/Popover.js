@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef, useLayoutEffect } from 'react';
 import PropTypes from 'prop-types';
-import { useOutsideClick } from '../../hooks/useOutsideClick';
+import useOutsideClick from '../../hooks/useOutsideClick';
 import styleModules from './Popover.module.css';
 import { useTheme } from '../../utils/theme';
 const Popover = ({

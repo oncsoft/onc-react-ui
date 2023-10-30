@@ -1,5 +1,6 @@
 import { useEffect, useRef } from 'react';
 
+import PropTypes from 'prop-types';
 const DEFAULT_OPTIONS = { config: { attributes: true } };
 
 const useMutationObserver = ({
@@ -29,4 +30,9 @@ const useMutationObserver = ({
   return observerRef.current;
 };
 
+useMutationObserver.propTypes = {
+  target: PropTypes.ref,
+  callback: PropTypes.func,
+  options: PropTypes.object,
+};
 export default useMutationObserver;

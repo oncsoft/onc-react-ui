@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import styleModules from './InfiniteScroll.module.css';
 import Spinner from '../Spinner/Spinner';
 import { useTheme } from '../../utils/theme';
-import { useInView } from '../../hooks/useInView';
+import useInView from '../../hooks/useInView';
 
 const InfiniteScroll = ({
   data = [],

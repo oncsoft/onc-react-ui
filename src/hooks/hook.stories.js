@@ -3,12 +3,12 @@ import React, { useEffect, useRef } from 'react';
 import ThemeProvider from '../utils/theme.js';
 import useWebWorker from './useWebWorker.js';
 import Grid from '../components/Grid/Grid.js';
-import { useStateRefCallback } from './useStateRefCallback.js';
+import useStateRefCallback from './useStateRefCallback.js';
 import Button from '../components/Button/Button.js';
-import { useInView } from './useInView.js';
-import { useMutationObserver } from './useMutationObserver.js';
-import { useBrowserAndOs } from './useBrowserAndOs.js';
-import { useOutsideClick } from './useOutsideClick.js';
+import useInView from './useInView.js';
+import useMutationObserver from './useMutationObserver.js';
+import useBrowserAndOs from './useBrowserAndOs.js';
+import useOutsideClick from './useOutsideClick.js';
 
 // More on how to set up stories at: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
