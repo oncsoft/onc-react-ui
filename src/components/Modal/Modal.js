@@ -68,6 +68,7 @@ const Modal = ({
           {heading}
           <Button
             icon={<CloseSvg />}
+            label=""
             type="secondary"
             rounded
             noShadow

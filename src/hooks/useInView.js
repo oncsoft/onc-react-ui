@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 
-export const useInView = (target, options = {}) => {
+const useInView = (target, options = {}) => {
   const [isIntersecting, setIsIntersecting] = useState(false);
   const [observer, setObserver] = useState(null);
 
@@ -25,3 +25,5 @@ export const useInView = (target, options = {}) => {
 
   return isIntersecting;
 };
+
+export default useInView;

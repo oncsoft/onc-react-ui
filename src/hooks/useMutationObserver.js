@@ -2,7 +2,7 @@ import { useEffect, useRef } from 'react';
 
 const DEFAULT_OPTIONS = { config: { attributes: true } };
 
-export const useMutationObserver = ({
+const useMutationObserver = ({
   target,
   callback,
   options = DEFAULT_OPTIONS,
@@ -28,3 +28,5 @@ export const useMutationObserver = ({
   // Observer'ı her zaman return edin
   return observerRef.current;
 };
+
+export default useMutationObserver;

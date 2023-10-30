@@ -82,7 +82,7 @@ const Alert = ({
       <Grid item={1}>
         {onClose && (
           <div className={styleModules.closeIcon}>
-            <Button onClick={onClose} icon={<CloseSvg />} rounded />
+            <Button label="" onClick={onClose} icon={<CloseSvg />} rounded />
           </div>
         )}
       </Grid>

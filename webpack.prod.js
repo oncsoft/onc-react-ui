@@ -12,6 +12,7 @@ module.exports = {
     usedExports: true,
     minimize: true,
   },
+  mode: 'production',
   module: {
     rules: [
       {

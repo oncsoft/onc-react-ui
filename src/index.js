@@ -20,6 +20,7 @@ export { default as UploadImage } from '../src/components/UploadImage/UploadImag
 export { default as TextArea } from '../src/components/TextArea/TextArea';
 export { default as ColorPicker } from '../src/components/ColorPicker/ColorPicker';
 export { default as Popover } from '../src/components/Popover/Popover';
+export { default as InfiniteTable } from '../src/components/InfiniteTable/InfiniteTable';
 
 export { default as ThemeProvider } from '../src/utils/theme';
 

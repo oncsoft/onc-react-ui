@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
 
-export const useStateRefCallback = (initialState) => {
+const useStateRefCallback = (initialState) => {
   const [state, setState] = useState(initialState);
 
   const callbackRef = useRef();
@@ -29,3 +29,5 @@ export const useStateRefCallback = (initialState) => {
 
   return [state, _setState, valueRef];
 };
+
+export default useStateRefCallback;

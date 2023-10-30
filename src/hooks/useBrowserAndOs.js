@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 
-export const useBrowserAndOs = () => {
+const useBrowserAndOs = () => {
   const [browserName, setBrowserName] = useState('');
   const [browserVersion, setBrowserVersion] = useState('');
   const [osName, setOSName] = useState('');
@@ -31,3 +31,5 @@ export const useBrowserAndOs = () => {
     osVersion,
   };
 };
+
+export default useBrowserAndOs;
