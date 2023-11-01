@@ -1,5 +1,9 @@
 ### Release
 
+**_Version 0.22.0_**
+
+- TreeShaking activate
+
 **_Version 0.21.8_**
 
 - Other components hook usage problem fix

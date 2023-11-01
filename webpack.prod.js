@@ -4,15 +4,15 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 module.exports = {
   entry: './src/index.js',
   output: {
-    filename: 'index.js',
+    filename: '[name].js',
     library: 'onc-react-ui',
     libraryTarget: 'umd',
   },
+  mode: 'production',
   optimization: {
     usedExports: true,
     minimize: true,
   },
-  mode: 'production',
   module: {
     rules: [
       {
@@ -24,34 +24,24 @@ module.exports = {
       },
       {
         test: /\.css$/,
-        use: [
-          MiniCssExtractPlugin.loader, // CSS dosyalarını ayrı bir dosyaya çıkarmak için kullanılır
-          'css-loader', // CSS dosyalarını işlemek için kullanılır
-        ],
-        exclude: /\.module\.css$/, // .module.css uzantısına sahip dosyaları hariç tut
+        use: [MiniCssExtractPlugin.loader, 'css-loader'],
+        exclude: /\.module\.css$/,
       },
       {
-        test: /\.module\.css$/, // .module.css uzantısına sahip dosyaları seç
+        test: /\.module\.css$/,
         use: [
-          MiniCssExtractPlugin.loader, // CSS dosyalarını ayrı bir dosyaya çıkarmak için kullanılır
+          MiniCssExtractPlugin.loader,
           {
             loader: 'css-loader',
             options: {
-              modules: true, // CSS Modülleri etkinleştirildi
+              modules: true,
             },
           },
         ],
       },
       {
         test: /\.svg$/,
-        use: [
-          {
-            loader: 'svg-url-loader',
-            options: {
-              limit: 8192, // This sets a limit for when the file is inlined as a data URL (bytes)
-            },
-          },
-        ],
+        use: 'svg-url-loader',
       },
     ],
   },
@@ -64,8 +54,7 @@ module.exports = {
   },
   plugins: [
     new MiniCssExtractPlugin({
-      filename: 'index.css', // Çıktı CSS dosyasının adı
+      filename: 'index.css',
     }),
-    // Diğer eklentiler...
   ],
 };
