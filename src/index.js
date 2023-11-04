@@ -21,6 +21,7 @@ export { default as TextArea } from '../src/components/TextArea/TextArea';
 export { default as ColorPicker } from '../src/components/ColorPicker/ColorPicker';
 export { default as Popover } from '../src/components/Popover/Popover';
 export { default as InfiniteTable } from '../src/components/InfiniteTable/InfiniteTable';
+export { default as FormBuilder } from '../src/components/FormBuilder/FormBuilder';
 
 export { default as ThemeProvider } from '../src/utils/theme';
 

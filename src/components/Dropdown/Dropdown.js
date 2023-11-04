@@ -4,6 +4,9 @@ import Input from '../Input/Input.js';
 import styleModules from './Dropdown.module.css';
 import { useTheme } from '../../utils/theme';
 import useOutsideClick from '../../hooks/useOutsideClick.js';
+import CaretUpSvg from '../Icons/CaretUpSvg.js';
+import CaretDownSvg from '../Icons/CaretDownSvg.js';
+import Icon from '../Icon/Icon.js';
 
 const Dropdown = ({
   label,
@@ -102,6 +105,17 @@ const Dropdown = ({
         rounded={rounded}
         placeholder={placeholder}
         onClick={setOpenStatus(true)}
+        settings={
+          open ? (
+            <Icon>
+              <CaretUpSvg />
+            </Icon>
+          ) : (
+            <Icon>
+              <CaretDownSvg />
+            </Icon>
+          )
+        }
       />
       {renderOptions}
     </div>

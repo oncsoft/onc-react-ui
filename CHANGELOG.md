@@ -1,5 +1,17 @@
 ### Release
 
+**_Version 0.23.1_**
+
+- Dropdown açık kapalı durumuna iconlar eklendi.
+
+**_Version 0.23.0_**
+
+- Basic form elemanları form buildera eklendi.Form builder componenti oluşturuldu.
+
+**_Version 0.22.1_**
+
+- Remove unused dist files
+
 **_Version 0.22.0_**
 
 - TreeShaking activate

@@ -102,7 +102,9 @@ const Input = ({
                 </div>
               </Grid>
             )}
-            {settings ?? null}
+            <Grid item={1} alignItems={'flex-end'} justifyContent={'flex-end'}>
+              {settings ?? null}
+            </Grid>
           </Grid>
 
           {errorStatus && (

@@ -23,6 +23,7 @@ import TextArea from './components/TextArea/TextArea.js';
 import ColorPicker from './components/ColorPicker/ColorPicker.js';
 import Popover from './components/Popover/Popover.js';
 import InfiniteTable from './components/InfiniteTable/InfiniteTable.js';
+import FormBuilder from './components/FormBuilder/FormBuilder.js';
 
 let i = 1;
 
@@ -107,6 +108,8 @@ const App = () => {
 
     setSampleData((current) => [...current, ...sampleData2, ...newData]);
   };
+
+  const builderRef = useRef();
   return (
     <ThemeProvider>
       <div className="App">
@@ -115,10 +118,29 @@ const App = () => {
           style={{ width: '100%', marginTop: 100 }}
           onClick={(e) => {
             setPop(true);
+            alert(JSON.stringify(builderRef.current.getData));
           }}
         >
           asdad
         </button>
+        <FormBuilder
+          ref={builderRef}
+          data={[
+            {
+              item: 6,
+              type: 'Input',
+              value: 'aaa',
+              name: 'a',
+              bordered: true,
+            },
+            {
+              item: 6,
+              type: 'Input',
+              name: 'b',
+              value: 'bbb',
+            },
+          ]}
+        />
         <InfiniteTable
           data={sampleData}
           columns={columns}
