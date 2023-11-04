@@ -11,7 +11,7 @@
   top: 0;
   background-color: var(--primary);
   z-index: 1;
-  color: white;
+  color: var(--secondaryTextColor);
 }
 
 .table-row {

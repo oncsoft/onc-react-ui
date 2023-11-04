@@ -18,20 +18,20 @@
   display: flex;
   justify-content: space-between;
   margin-bottom: 0.5rem;
-  color: #fff;
+  color: var(--secondaryTextColor);
 }
 
 .navigation button {
   border: none;
   cursor: pointer;
-  color: #fff;
+  color: var(--secondaryTextColor);
 }
 
 .weekdays {
   display: flex;
   justify-content: space-between;
   padding: 0.3rem;
-  color: #fff;
+  color: var(--secondaryTextColor);
 }
 
 .weekdays div {
@@ -51,12 +51,12 @@
   padding: 10px 0;
   text-align: center;
   cursor: pointer;
-  color: #fff;
+  color: var(--secondaryTextColor);
 }
 
 .selected {
   background-color: var(--secondaryColor);
-  color: #fff;
+  color: var(--secondaryTextColor);
   border-radius: 1rem;
 }
 
@@ -67,4 +67,8 @@
 
 .emptyDay {
   width: 14.28%;
+}
+
+.gradient {
+  background: linear-gradient(to right, var(--gradientColors));
 }

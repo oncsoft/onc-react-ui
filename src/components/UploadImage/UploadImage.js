@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import Grid from '../Grid/Grid';
 import Button from '../Button/Button';
 import { ThrashSvg, UploadSvg } from '../Icons';
-import { useTheme } from '../../utils/theme';
+import { getStyleVariables, useTheme } from '../../utils/theme';
 import styleModules from './UploadImage.module.css';
 
 const UploadImage = ({
@@ -16,9 +16,7 @@ const UploadImage = ({
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const inputRef = useRef(null);
   const theme = useTheme();
-  const styleVariables = {
-    '--primaryColor': theme.primaryColor,
-  };
+  const styleVariables = getStyleVariables({ theme });
 
   const handleImageChange = (e) => {
     const files = e.target.files;

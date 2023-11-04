@@ -7,7 +7,7 @@
   border-radius: 0.125rem;
   transition: 0.4s ease;
   box-shadow: 1px 2px 10px var(--shadowColor);
-  color: #ffffff;
+  color: var(--secondaryTextColor);
 }
 
 .icon {
@@ -22,9 +22,13 @@
   background-color: var(--secondaryColor);
 }
 
+.gradient {
+  background: linear-gradient(to right, var(--gradientColors));
+}
+
 .transparent {
   background-color: transparent;
-  color: var(--secondaryColor);
+  color: var(--primaryTextColor);
   box-shadow: none;
 }
 

@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styleModules from './TextArea.module.css';
-import { useTheme } from '../../utils/theme';
+import { getStyleVariables, useTheme } from '../../utils/theme';
 
 const TextArea = ({
   label,
@@ -12,12 +12,16 @@ const TextArea = ({
   bordered,
   rounded,
   noShadow,
+  gradient,
 }) => {
   const theme = useTheme();
-  const styleVariables = {
-    '--primaryColor': theme.primaryColor,
-    '--shadowColor': noShadow ? '' : theme.shadowColor,
-  };
+  const styleVariables = getStyleVariables({
+    theme,
+    style: {
+      '--shadowColor': noShadow ? '' : theme.shadowColor,
+    },
+  });
+
   const handleChange = (e) => {
     onChange(e.target.value);
   };
@@ -31,7 +35,7 @@ const TextArea = ({
       <textarea
         className={`${bordered ? styleModules['bordered'] : ''} ${
           rounded ? styleModules['rounded'] : ''
-        }`}
+        } ${gradient ? styleModules['gradient'] : ''}`}
         value={value}
         onChange={handleChange}
         placeholder={placeholder}
@@ -50,6 +54,7 @@ TextArea.propTypes = {
   bordered: PropTypes.bool,
   rounded: PropTypes.bool,
   noShadow: PropTypes.bool,
+  gradient: PropTypes.bool,
 };
 
 export default TextArea;

@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styleModules from './Dialog.module.css';
 import Grid from '../Grid/Grid';
-import { useTheme } from '../../utils/theme';
+import { useTheme, getStyleVariables } from '../../utils/theme';
 import { hexToRgba } from '../../utils/helper';
 const Dialog = ({
   open,
@@ -15,15 +15,19 @@ const Dialog = ({
   height,
 }) => {
   const theme = useTheme();
+
   const styleVariables = {
-    '--primaryColor': theme.primaryColor,
-    '--secondaryColor': theme.secondaryColor,
-    '--backdropColor': hexToRgba(theme.secondaryColor, 0.7),
-    '--shadowColor': theme.shadowColor,
-    '--width': width ?? 'calc(100vw / 4)',
-    '--height': height ?? 'calc(100vh / 2)',
+    ...getStyleVariables({
+      theme,
+      style: {
+        '--backdropColor': hexToRgba(theme.secondaryColor, 0.7),
+        '--width': width ?? 'calc(100vw / 4)',
+        '--height': height ?? 'calc(100vh / 2)',
+      },
+    }),
     ...style,
   };
+
   return (
     <>
       {open && (

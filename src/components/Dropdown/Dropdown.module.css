@@ -18,6 +18,10 @@
   z-index: 1;
 }
 
+.gradient {
+  background: linear-gradient(to right, var(--gradientColors));
+}
+
 .option {
   background-color: var(--primaryColor);
   color: white;

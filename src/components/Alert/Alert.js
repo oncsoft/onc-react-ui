@@ -4,7 +4,7 @@ import styleModules from './Alert.module.css';
 import { CloseSvg } from '../Icons';
 import Button from '../Button/Button';
 import Grid from '../Grid/Grid';
-import { useTheme } from '../../utils/theme';
+import { getStyleVariables, useTheme } from '../../utils/theme';
 
 const components = {
   error: {
@@ -32,12 +32,12 @@ const Alert = ({
   type = 'success',
   delay,
   remove,
+  gradient,
 }) => {
   const theme = useTheme();
-  const styleVariables = {
-    '--secondaryColor': theme.secondaryColor,
-    '--shadowColor': theme.shadowColor,
-  };
+  const styleVariables = getStyleVariables({
+    theme,
+  });
   useEffect(() => {
     if (!delay) {
       onClose();
@@ -58,7 +58,9 @@ const Alert = ({
       direction={'row'}
       justifyContent={'center'}
       alignItems={'center'}
-      className={`${styleModules[position]} ${styleModules.notificationContainer}`}
+      className={`${styleModules[position]} ${
+        styleModules.notificationContainer
+      } ${gradient ? styleModules['gradient'] : ''}`}
       style={styleVariables}
     >
       <Grid
@@ -102,6 +104,7 @@ Alert.propTypes = {
   type: PropTypes.oneOf(['error', 'warning', 'info', 'success']),
   delay: PropTypes.number,
   remove: PropTypes.func,
+  gradient: PropTypes.bool,
 };
 
 export default Alert;

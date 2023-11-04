@@ -2,6 +2,7 @@
   display: flex;
   align-items: center;
   cursor: pointer;
+  color: var(--primaryTextColor);
 }
 
 .checkmark {
@@ -10,6 +11,12 @@
   width: 1rem;
   height: 1rem;
   transition: all 0.3s ease;
+}
+
+.gradient {
+  border: 2px solid transparent;
+  border-image: linear-gradient(to right, var(--gradientColors));
+  border-image-slice: 1;
 }
 
 .checkmark:hover {

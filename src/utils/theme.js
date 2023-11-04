@@ -8,6 +8,15 @@ export const useTheme = () => {
   return useContext(ThemeContext);
 };
 
+export const getStyleVariables = ({ theme, style = {} }) => {
+  const themeVariables = Object.keys(defaultTheme).reduce((acc, key) => {
+    acc[`--${key}`] = theme[key];
+    return acc;
+  }, {});
+
+  return { ...themeVariables, ...style };
+};
+
 const ThemeProvider = ({ children, theme }) => {
   const selectedTheme = theme || defaultTheme;
   useLayoutEffect(() => {

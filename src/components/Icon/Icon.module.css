@@ -125,3 +125,35 @@
   cursor: not-allowed;
   pointer-events: none;
 }
+
+.gradient path {
+  fill: linear-gradient(to right, var(--gradientColors));
+}
+
+.gradient:hover path {
+  fill: linear-gradient(to right, var(--gradientColors));
+}
+
+.gradient g {
+  stroke: linear-gradient(to right, var(--gradientColors));
+}
+
+.gradient:hover g {
+  stroke: linear-gradient(to right, var(--gradientColors));
+}
+
+.gradient circle {
+  fill: linear-gradient(to right, var(--gradientColors));
+}
+
+.gradient:hover circle {
+  fill: linear-gradient(to right, var(--gradientColors));
+}
+
+.gradient rect {
+  fill: linear-gradient(to right, var(--gradientColors));
+}
+
+.gradient:hover rect {
+  fill: linear-gradient(to right, var(--gradientColors));
+}

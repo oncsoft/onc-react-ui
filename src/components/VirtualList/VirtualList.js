@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import styleModules from './VirtualList.module.css';
 import PropTypes from 'prop-types';
-import { useTheme } from '../../utils/theme';
+import { getStyleVariables, useTheme } from '../../utils/theme';
 
 const VirtualList = ({
   data,
@@ -38,17 +38,19 @@ const VirtualList = ({
   }, [data, containerHeight, itemHeight]);
 
   const visibleData = data.slice(startIndex, endIndex);
-  const styleVariables = {
-    '--primaryColor': theme[`${type + 'Color'}`],
-    '--secondaryColor': constColor,
-    '--containerHeight': containerHeight + 'px',
-    '--contentHeight':
-      (visibleData.length < containerHeight / itemHeight - 1
-        ? containerHeight
-        : data.length * itemHeight) + 'px',
-    '--itemHeight': itemHeight + 'px',
-  };
-
+  const styleVariables = getStyleVariables({
+    theme,
+    style: {
+      '--primaryColor': theme[`${type + 'Color'}`],
+      '--secondaryColor': constColor,
+      '--containerHeight': containerHeight + 'px',
+      '--contentHeight':
+        (visibleData.length < containerHeight / itemHeight - 1
+          ? containerHeight
+          : data.length * itemHeight) + 'px',
+      '--itemHeight': itemHeight + 'px',
+    },
+  });
   return (
     <div
       ref={containerRef}

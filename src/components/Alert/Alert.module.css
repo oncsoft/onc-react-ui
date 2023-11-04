@@ -4,8 +4,12 @@
 }
 
 .notification {
-  color: #fff;
+  color: var(--secondaryTextColor);
   transition: all 0.5s;
+}
+
+.gradient {
+  background: linear-gradient(to right, var(--gradientColors));
 }
 
 .top-right {

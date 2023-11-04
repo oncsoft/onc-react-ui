@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import PropTypes from 'prop-types';
 import styleModules from './InfiniteScroll.module.css';
 import Spinner from '../Spinner/Spinner';
-import { useTheme } from '../../utils/theme';
+import { getStyleVariables, useTheme } from '../../utils/theme';
 import useInView from '../../hooks/useInView';
 
 const InfiniteScroll = ({
@@ -14,6 +14,7 @@ const InfiniteScroll = ({
   loadingText = 'Yükleniyor...',
   virtualized = false,
   spinner = true,
+  gradient,
 }) => {
   const lastItemRef = useRef();
   const theme = useTheme();
@@ -22,9 +23,7 @@ const InfiniteScroll = ({
       threshold: 0.1,
       rootMargin: '1px',
     }) ?? false;
-  const styleVariables = {
-    '--secondaryColor': theme.secondaryColor,
-  };
+  const styleVariables = getStyleVariables({ theme });
   const [startIndex, setStartIndex] = useState(0);
   const [endIndex, setEndIndex] = useState(
     Math.floor(containerHeight / itemHeight),
@@ -68,7 +67,9 @@ const InfiniteScroll = ({
         style={{ height: containerHeight, overflow: 'auto' }}
       >
         <div
-          className={styleModules.infiniteScrollContainer}
+          className={`${styleModules.infiniteScrollContainer} ${
+            gradient ? styleModules['gradient'] : ''
+          }`}
           style={{
             height:
               visibleData.length < containerHeight / itemHeight - 1
@@ -81,7 +82,9 @@ const InfiniteScroll = ({
         >
           {visibleData.map((item, index) => (
             <div
-              className={styleModules.child}
+              className={`${styleModules.child} ${
+                gradient ? styleModules['gradient'] : ''
+              }`}
               key={index}
               style={{
                 height: itemHeight,
@@ -115,6 +118,7 @@ InfiniteScroll.propTypes = {
   loadingText: PropTypes.string,
   virtualized: PropTypes.bool,
   spinner: PropTypes.bool,
+  gradient: PropTypes.bool,
 };
 
 export default InfiniteScroll;

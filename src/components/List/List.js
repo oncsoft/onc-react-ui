@@ -1,15 +1,17 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styleModules from './List.module.css';
-import { useTheme } from '../../utils/theme';
+import { getStyleVariables, useTheme } from '../../utils/theme';
 import Grid from '../Grid/Grid';
 
 const List = ({ children, style, type = 'primary' }) => {
   const theme = useTheme();
-  const styleVariables = {
-    '--primaryColor': theme[`${type + 'Color'}`],
-    '--shadowColor': theme.shadowColor,
-  };
+  const styleVariables = getStyleVariables({
+    theme,
+    style: {
+      '--primaryColor': theme[`${type + 'Color'}`],
+    },
+  });
   const styles = { ...style, ...styleVariables };
   return (
     <Grid

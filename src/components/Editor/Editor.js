@@ -7,7 +7,13 @@ import 'react-draft-wysiwyg/dist/react-draft-wysiwyg.css';
 import stylesModule from './Editor.module.css';
 import { useTheme } from '../../utils/theme';
 
-const Editor = ({ imageCallback, value = '', onChange, type = 'primary' }) => {
+const Editor = ({
+  imageCallback,
+  value = '',
+  onChange,
+  type = 'primary',
+  gradient,
+}) => {
   const blocksFromHTML = convertFromHTML(value);
   const initialContentState = ContentState.createFromBlockArray(
     blocksFromHTML.contentBlocks,
@@ -24,9 +30,14 @@ const Editor = ({ imageCallback, value = '', onChange, type = 'primary' }) => {
     }
     const root = document.documentElement;
 
-    root.style.setProperty('--themeBackgroundColor', theme[`${type}Color`]);
+    root.style.setProperty(
+      '--themeBackgroundColor',
+      gradient
+        ? theme.gradientColors
+        : theme[`${type}Color`] + ',' + theme[`${type}Color`],
+    );
     root.style.setProperty('--themeTextColor', 'white');
-  }, []);
+  }, [gradient, type]);
 
   const uploadCallback = (file) => {
     return new Promise((resolve, reject) => {
@@ -109,6 +120,7 @@ Editor.propTypes = {
   value: PropTypes.string,
   onChange: PropTypes.func,
   type: PropTypes.oneOf(['primary', 'secondary', 'default']),
+  gradient: PropTypes.bool,
 };
 
 export default Editor;

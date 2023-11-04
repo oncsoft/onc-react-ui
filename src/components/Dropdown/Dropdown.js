@@ -2,7 +2,7 @@ import React, { useEffect, useMemo, useState, useRef } from 'react';
 import PropTypes from 'prop-types';
 import Input from '../Input/Input.js';
 import styleModules from './Dropdown.module.css';
-import { useTheme } from '../../utils/theme';
+import { getStyleVariables, useTheme } from '../../utils/theme';
 import useOutsideClick from '../../hooks/useOutsideClick.js';
 import CaretUpSvg from '../Icons/CaretUpSvg.js';
 import CaretDownSvg from '../Icons/CaretDownSvg.js';
@@ -18,17 +18,19 @@ const Dropdown = ({
   rounded,
   placeholder = 'Giriş Yapınız',
   notFoundText = 'Sonuç Bulunamadı.',
+  gradient,
 }) => {
   const [innerValue, setInnerValue] = useState(value);
   const [isSearch, setIsSearch] = useState(false);
   const [open, setOpen] = useState(false);
   const theme = useTheme();
-  const styleVariables = {
-    '--primaryColor': theme.primaryColor,
-    '--secondaryColor': theme.secondaryColor,
-    '--shadowColor': noShadow ? 'transparent' : theme.shadowColor,
-    '--disabledColor': theme.disabledColor,
-  };
+  const styleVariables = getStyleVariables({
+    theme,
+    style: {
+      '--shadowColor': noShadow ? 'transparent' : theme.shadowColor,
+    },
+  });
+
   const containerRef = useRef();
   const optionsRef = useRef();
 
@@ -64,7 +66,7 @@ const Dropdown = ({
       <div
         className={`${styleModules.datalist} ${
           open ? styleModules.visible : styleModules.invisible
-        }`}
+        } ${gradient ? styleModules['gradient'] : ''}`}
         style={styleVariables}
         tabIndex={0}
         ref={optionsRef}
@@ -75,7 +77,9 @@ const Dropdown = ({
             return (
               <div
                 onClick={onSelectOption(item)}
-                className={`${styleModules.option}`}
+                className={`${styleModules.option} ${
+                  gradient ? styleModules['gradient'] : ''
+                }`}
                 key={item + index}
                 style={styleVariables}
               >
@@ -95,7 +99,11 @@ const Dropdown = ({
   useOutsideClick(containerRef, setOpenStatus(false));
 
   return (
-    <div className={`${styleModules.dropdownContainer}`} ref={containerRef}>
+    <div
+      className={`${styleModules.dropdownContainer}`}
+      ref={containerRef}
+      onClick={setOpenStatus(true)}
+    >
       <Input
         label={label}
         value={innerValue ?? ''}
@@ -103,8 +111,8 @@ const Dropdown = ({
         noShadow={noShadow ?? false}
         bordered={bordered}
         rounded={rounded}
+        gradient={gradient}
         placeholder={placeholder}
-        onClick={setOpenStatus(true)}
         settings={
           open ? (
             <Icon>
@@ -132,6 +140,7 @@ Dropdown.propTypes = {
   rounded: PropTypes.bool,
   placeholder: PropTypes.string,
   notFoundText: PropTypes.string,
+  gradient: PropTypes.bool,
 };
 
 export default Dropdown;

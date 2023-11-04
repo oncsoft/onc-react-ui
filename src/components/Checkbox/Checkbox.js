@@ -3,18 +3,29 @@ import PropTypes from 'prop-types';
 import CheckSvg from '../Icons/CheckSvg.js';
 import Icon from '../Icon/Icon.js';
 import stylesModule from './Checkbox.module.css';
-import { useTheme } from '../../utils/theme.js';
-const Checkbox = ({ label, value, onChange, style, type, disabled }) => {
+import { getStyleVariables, useTheme } from '../../utils/theme.js';
+const Checkbox = ({
+  label,
+  value,
+  onChange,
+  style,
+  type,
+  disabled,
+  gradient,
+}) => {
   const theme = useTheme();
-  const styleVariables = {
-    '--primaryColor': disabled ? theme.disabledColor : theme[`${type}Color`],
-  };
+  const styleVariables = getStyleVariables({
+    theme,
+    style: {
+      '--primaryColor': disabled ? theme.disabledColor : theme[`${type}Color`],
+    },
+  });
   return (
     <label
       className={`${stylesModule.checkboxContainer} ${
         disabled ? stylesModule.disabled : ''
-      }`}
-      style={style}
+      } `}
+      style={{ style, ...styleVariables }}
     >
       <input
         className={`${stylesModule.checkbox}`}
@@ -26,7 +37,7 @@ const Checkbox = ({ label, value, onChange, style, type, disabled }) => {
       <span
         className={`${stylesModule.checkmark} ${
           disabled ? stylesModule.disabled : ''
-        } `}
+        } ${gradient ? stylesModule['gradient'] : ''} `}
         style={styleVariables}
       >
         {value ? (
@@ -51,6 +62,7 @@ Checkbox.propTypes = {
   style: PropTypes.object,
   type: PropTypes.oneOf(['primary', 'secondary', 'error']),
   disabled: PropTypes.bool,
+  gradient: PropTypes.bool,
 };
 
 export default Checkbox;

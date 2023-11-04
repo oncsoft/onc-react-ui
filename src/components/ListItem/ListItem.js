@@ -1,18 +1,22 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styleModules from './ListItem.module.css';
-import { useTheme } from '../../utils/theme';
+import { getStyleVariables, useTheme } from '../../utils/theme';
 import Grid from '../Grid/Grid';
 
 const ListItem = ({ value, style, type = 'primary', noBorder, onClick }) => {
   const theme = useTheme();
   const constColor =
     type === 'primary' ? theme.secondaryColor : theme.primaryColor;
-  const styleVariables = {
-    '--primaryColor': theme[`${type + 'Color'}`],
-    '--secondaryColor': constColor,
-    '--borderColor': noBorder ? '' : constColor,
-  };
+  const styleVariables = getStyleVariables({
+    theme,
+    style: {
+      '--primaryColor': theme[`${type + 'Color'}`],
+      '--secondaryColor': constColor,
+      '--borderColor': noBorder ? '' : constColor,
+    },
+  });
+
   const styles = { ...style, ...styleVariables };
   return (
     <Grid item={11} className={`${styleModules.listItem}`} style={styles}>

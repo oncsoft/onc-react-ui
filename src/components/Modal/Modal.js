@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import stylesModule from './Modal.module.css';
 import Button from '../Button/Button.js';
 import { CloseSvg } from '../Icons/index.js';
-import { useTheme } from '../../utils/theme.js';
+import { getStyleVariables, useTheme } from '../../utils/theme.js';
 
 const Modal = ({
   open,
@@ -20,11 +20,7 @@ const Modal = ({
   const offsetX = useRef(0);
   const offsetY = useRef(0);
   const theme = useTheme();
-  const styleVariables = {
-    '--primaryColor': theme.primaryColor,
-    '--secondaryColor': theme.secondaryColor,
-    '--shadowColor': theme.shadowColor,
-  };
+  const styleVariables = getStyleVariables({ theme });
   const handleMouseDown = (e) => {
     if (e.button === 0) {
       setIsDragging(true);

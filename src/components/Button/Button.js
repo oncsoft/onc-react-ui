@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { useTheme } from '../../utils/theme.js';
+import { useTheme, getStyleVariables } from '../../utils/theme.js';
 import styleModules from './Button.module.css';
 const sizes = {
   sm: {
@@ -27,16 +27,20 @@ const Button = ({
   noShadow,
   style = {},
   ref,
+  gradient,
 }) => {
   const theme = useTheme();
+
   const styles = {
+    ...getStyleVariables({
+      theme,
+      style: {
+        '--paddingSize': sizes[size ?? 'md'].paddingSize,
+        '--fontSize': sizes[size ?? 'md'].fontSize,
+        '--shadowColor': noShadow ? 'transparent' : theme.shadowColor,
+      },
+    }),
     ...style,
-    '--primaryColor': theme.primaryColor,
-    '--secondaryColor': theme.secondaryColor,
-    '--paddingSize': sizes[size ?? 'md'].paddingSize,
-    '--fontSize': sizes[size ?? 'md'].fontSize,
-    '--shadowColor': noShadow ? 'transparent' : theme.shadowColor,
-    '--disabledColor': theme.disabledColor,
   };
 
   return (
@@ -44,7 +48,9 @@ const Button = ({
       ref={ref}
       className={`${styleModules.button} ${styleModules[type ?? 'primary']} ${
         rounded ? styleModules.rounded : ''
-      } ${icon ? styleModules.icon : ''}`}
+      } ${icon ? styleModules.icon : ''} ${
+        gradient ? styleModules['gradient'] : ''
+      }`}
       style={styles}
       onClick={onClick}
       disabled={disabled}
@@ -64,6 +70,7 @@ Button.propTypes = {
   rounded: PropTypes.bool,
   icon: PropTypes.any,
   noShadow: PropTypes.bool,
+  gradient: PropTypes.bool,
   style: PropTypes.object,
   ref: PropTypes.ref,
 };

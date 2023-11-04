@@ -3,6 +3,8 @@
   box-shadow: 0 0 1rem var(--shadowColor);
   overflow-y: auto;
   overflow-x: hidden;
+
+  color: var(--secondaryTextColor);
 }
 
 .listContainer .listItem:last-child {

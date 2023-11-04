@@ -4,11 +4,15 @@
   padding: 0.5rem;
   border-bottom: 2px solid var(--borderColor);
   background-color: var(--primaryColor);
-  color: white;
+  color: var(--secondaryTextColor);
   transition: 0.3sn ease;
   cursor: pointer;
 }
 
 .listItem:hover {
   background-color: var(--secondaryColor);
+}
+
+.gradient {
+  background: linear-gradient(to right, var(--gradientColors));
 }

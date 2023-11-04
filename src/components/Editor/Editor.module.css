@@ -1,12 +1,12 @@
 .editorContainer {
   border: 2px solid var(--primaryColor);
-  background: var(--themeBackgroundColor) !important;
+  background: linear-gradient(to right, var(--themeBackgroundColor)) !important;
   color: var(--themeTextColor) !important;
 }
 
 .themeToolbar {
   border: 1px solid transparent;
-  background: var(--themeBackgroundColor) !important;
+  background: linear-gradient(to right, var(--themeBackgroundColor)) !important;
   color: var(--themeTextColor) !important;
 }
 
@@ -15,5 +15,5 @@
 }
 
 [class*='rdw-'] {
-  background: var(--themeBackgroundColor ?? white) !important;
+  background: linear-gradient(to right, var(--themeBackgroundColor)) !important;
 }

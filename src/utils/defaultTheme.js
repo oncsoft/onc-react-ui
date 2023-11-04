@@ -4,6 +4,9 @@ const defaultTheme = {
   shadowColor: '#1c1d1d',
   errorColor: 'red',
   disabledColor: '#393737',
+  gradientColors: '#6bb8e6,#179c24',
+  primaryTextColor: 'black',
+  secondaryTextColor: 'white',
 };
 
 export default defaultTheme;

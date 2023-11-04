@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { useTheme } from '../../utils/theme.js';
+import { getStyleVariables, useTheme } from '../../utils/theme.js';
 import styleModules from './Input.module.css';
 import Grid from '../Grid/Grid.js';
 
@@ -19,6 +19,7 @@ const Input = ({
   settings,
   readOnly,
   placeholder = 'Giriş Yapınız',
+  gradient,
   ...props
 }) => {
   const theme = useTheme();
@@ -28,13 +29,15 @@ const Input = ({
 
   const errorStatus = value?.length > inputSize || error;
 
-  const styleVariables = {
-    '--primaryColor': errorStatus
-      ? theme.errorColor ?? 'red'
-      : theme.primaryColor,
-    '--shadowColor': noShadow ? '' : theme.shadowColor,
-    '--disabledColor': theme.disabledColor,
-  };
+  const styleVariables = getStyleVariables({
+    theme,
+    style: {
+      '--primaryColor': errorStatus
+        ? theme.errorColor ?? 'red'
+        : theme.primaryColor,
+      '--shadowColor': noShadow ? '' : theme.shadowColor,
+    },
+  });
 
   const bottomBorderUnset =
     rounded || bordered
@@ -50,7 +53,7 @@ const Input = ({
       <div
         className={`${styleModules.inputContainer} ${
           disabled ? styleModules.disabled : ''
-        } `}
+        } ${gradient ? styleModules['gradient'] : ''}`}
         style={{ ...styleVariables, ...bottomBorderUnset }}
       >
         <Grid
@@ -137,6 +140,7 @@ Input.propTypes = {
   noShadow: PropTypes.bool,
   placeholder: PropTypes.string,
   settings: PropTypes.any,
+  gradient: PropTypes.bool,
 };
 
 export default Input;

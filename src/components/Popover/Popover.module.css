@@ -9,7 +9,7 @@
   border: 2px solid var(--primaryColor);
   border-radius: 0.25rem;
   box-shadow: 0 0.5rem 1.5rem -0.5rem var(--shadowColor);
-  color: white;
+  color: var(--secondaryTextColor);
   padding: 1rem;
   z-index: 1000;
   word-wrap: break-word;

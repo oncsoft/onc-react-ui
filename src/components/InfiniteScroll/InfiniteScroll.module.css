@@ -1,10 +1,14 @@
 .infiniteScrollContainer {
   background-color: var(--secondaryColor);
-  color: white;
+  color: var(--secondaryTextColor);
   width: auto;
   min-width: 50vw;
 }
 .child {
   padding: 0.5rem;
   background-color: inherit;
+}
+
+.gradient {
+  background: linear-gradient(to right, var(--gradientColors));
 }

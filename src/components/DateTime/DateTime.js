@@ -1,6 +1,6 @@
 import React, { useRef, useState } from 'react';
 import PropTypes from 'prop-types';
-import { useTheme } from '../../utils/theme.js';
+import { getStyleVariables, useTheme } from '../../utils/theme.js';
 import styleModules from './DateTime.module.css';
 import Grid from '../Grid/Grid.js';
 import Button from '../Button/Button.js';
@@ -18,6 +18,7 @@ const DateTime = ({
   bordered,
   rounded,
   noShadow,
+  gradient,
 }) => {
   const [calendar, setCalendar] = useState(false);
   const calendarRef = useRef();
@@ -25,14 +26,15 @@ const DateTime = ({
 
   const errorStatus = error;
 
-  const styleVariables = {
-    '--primaryColor': errorStatus
-      ? theme.errorColor ?? 'red'
-      : theme.primaryColor,
-    '--shadowColor': noShadow ? '' : theme.shadowColor,
-    '--disabledColor': theme.disabledColor,
-  };
-
+  const styleVariables = getStyleVariables({
+    theme,
+    style: {
+      '--primaryColor': errorStatus
+        ? theme.errorColor ?? 'red'
+        : theme.primaryColor,
+      '--shadowColor': noShadow ? '' : theme.shadowColor,
+    },
+  });
   const bottomBorderUnset =
     rounded || bordered
       ? {
@@ -70,6 +72,7 @@ const DateTime = ({
           label={label}
           disabled={disabled}
           readOnly={true}
+          gradient={gradient}
           settings={
             <Grid item={1} alignItems={'flex-end'} justifyContent={'flex-end'}>
               <Button
@@ -102,6 +105,7 @@ DateTime.propTypes = {
   bordered: PropTypes.bool,
   rounded: PropTypes.bool,
   noShadow: PropTypes.bool,
+  gradient: PropTypes.bool,
 };
 
 export default DateTime;

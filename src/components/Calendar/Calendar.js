@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import stylesModule from './Calendar.module.css';
+import styleModules from './Calendar.module.css';
 import PropTypes from 'prop-types';
-import { useTheme } from '../../utils/theme.js';
+import { getStyleVariables, useTheme } from '../../utils/theme.js';
 import Button from '../Button/Button';
 import { ChevronLeftSvg, ChevronRightSvg } from '../Icons';
 import { getMonthList, getYearList } from '../../utils/dateHelper';
@@ -14,13 +14,12 @@ const Calendar = ({
   onChange,
   style = {},
   value = new Date(),
+  gradient,
 }) => {
   const theme = useTheme();
-  const stylesVariables = {
-    '--primaryColor': theme.primaryColor,
-    '--secondaryColor': theme.secondaryColor,
-    '--shadowColor': theme.shadowColor,
-  };
+  const styleVariables = getStyleVariables({
+    theme,
+  });
   const yearList = getYearList();
   const monthList = getMonthList();
   const [selectedDate, setSelectedDate] = useState(null);
@@ -81,7 +80,7 @@ const Calendar = ({
     const emptyBoxes = [];
     for (let i = 0; i < startDayOfWeek; i++) {
       emptyBoxes.push(
-        <div key={`empty-${i}`} className={stylesModule.emptyDay} />,
+        <div key={`empty-${i}`} className={styleModules.emptyDay} />,
       );
     }
     return emptyBoxes;
@@ -91,13 +90,13 @@ const Calendar = ({
     return days.map((date) => (
       <div
         key={date.toDateString()}
-        className={`${stylesModule.day} ${
+        className={`${styleModules.day} ${
           selectedDate && selectedDate.toDateString() === date.toDateString()
-            ? stylesModule.selected
+            ? styleModules.selected
             : ''
         } ${
           disabledRangeList.includes(date.toDateString())
-            ? stylesModule.disabled
+            ? styleModules.disabled
             : ''
         }`}
         onClick={handleDateClick(date)}
@@ -118,7 +117,13 @@ const Calendar = ({
           // eslint-disable-next-line react/jsx-key
           return (
             <Grid key={'year' + item} item={3}>
-              <Button label={item} onClick={onClickYear(item)} noShadow />
+              <Button
+                label={item}
+                onClick={onClickYear(item)}
+                noShadow
+                style={{ '--primaryTextColor': 'white' }}
+                type="transparent"
+              />
             </Grid>
           );
         })}
@@ -133,7 +138,13 @@ const Calendar = ({
           // eslint-disable-next-line react/jsx-key
           return (
             <Grid key={item} item={4}>
-              <Button label={item} onClick={onClickMonth(index)} noShadow />
+              <Button
+                label={item}
+                onClick={onClickMonth(index)}
+                noShadow
+                style={{ '--primaryTextColor': 'white' }}
+                type="transparent"
+              />
             </Grid>
           );
         })}
@@ -164,10 +175,12 @@ const Calendar = ({
   return (
     open && (
       <div
-        className={`${stylesModule.calendar}`}
-        style={{ ...style, ...stylesVariables }}
+        className={`${styleModules.calendar} ${
+          gradient ? styleModules['gradient'] : ''
+        }`}
+        style={{ ...style, ...styleVariables }}
       >
-        <div className={`${stylesModule.navigation}`}>
+        <div className={`${styleModules.navigation}`}>
           <Button
             icon={<ChevronLeftSvg />}
             rounded
@@ -191,8 +204,8 @@ const Calendar = ({
             onClick={goToNextMonth}
           />
         </div>
-        <div className={`${stylesModule.content}`}>
-          <div className={`${stylesModule.weekdays}`}>
+        <div className={`${styleModules.content}`}>
+          <div className={`${styleModules.weekdays}`}>
             <div>Pzt</div>
             <div>Sal</div>
             <div>Çar</div>
@@ -201,7 +214,7 @@ const Calendar = ({
             <div>Cmt</div>
             <div>Paz</div>
           </div>
-          <div className={`${stylesModule.days}`}>
+          <div className={`${styleModules.days}`}>
             {!(selectMonth || selectYear) && getEmptyBoxes(firstDay)}
             {!(selectMonth || selectYear) && renderDays(daysInMonth)}
             {selectYear && renderYears()}
@@ -223,6 +236,7 @@ Calendar.propTypes = {
   value: PropTypes.date,
   open: PropTypes.bool,
   style: PropTypes.object,
+  gradient: PropTypes.bool,
 };
 
 export default Calendar;

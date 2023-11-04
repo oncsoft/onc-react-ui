@@ -9,6 +9,7 @@ const ColorPicker = ({
   bordered,
   rounded,
   placeholder = 'Giriş Yapınız',
+  gradient,
 }) => {
   return (
     <div className={`${styleModules.colorPickerContainer}`}>
@@ -18,6 +19,7 @@ const ColorPicker = ({
         rounded={rounded}
         placeholder={placeholder}
         bordered={bordered}
+        gradient={gradient}
         settings={
           <input
             className={styleModules.colorPicker}
@@ -37,6 +39,7 @@ ColorPicker.propTypes = {
   bordered: PropTypes.bool,
   rounded: PropTypes.bool,
   placeholder: PropTypes.string,
+  gradient: PropTypes.bool,
 };
 
 export default ColorPicker;

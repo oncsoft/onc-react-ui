@@ -13,6 +13,7 @@ const InfiniteTable = ({
   loadingText = 'Loading...',
   virtualized = true,
   spinner = true,
+  gradient,
 }) => {
   const [columnRefs, setColumnRefs] = useState([]);
 
@@ -66,6 +67,7 @@ const InfiniteTable = ({
           loadingText={loadingText}
           virtualized={virtualized}
           spinner={spinner}
+          gradient={gradient}
         />
       )}
     </div>
@@ -81,6 +83,7 @@ InfiniteTable.propTypes = {
   loadingText: PropTypes.string,
   virtualized: PropTypes.bool,
   spinner: PropTypes.bool,
+  gradient: PropTypes.bool,
 };
 
 export default InfiniteTable;

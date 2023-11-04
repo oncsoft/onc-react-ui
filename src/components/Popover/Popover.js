@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef, useLayoutEffect } from 'react';
 import PropTypes from 'prop-types';
 import useOutsideClick from '../../hooks/useOutsideClick';
 import styleModules from './Popover.module.css';
-import { useTheme } from '../../utils/theme';
+import { getStyleVariables, useTheme } from '../../utils/theme';
 const Popover = ({
   children,
   position,
@@ -13,11 +13,7 @@ const Popover = ({
   style = {},
 }) => {
   const theme = useTheme();
-  const stylesVariables = {
-    '--primaryColor': theme.primaryColor,
-    '--secondaryColor': theme.secondaryColor,
-    '--shadowColor': theme.shadowColor,
-  };
+  const stylesVariables = getStyleVariables({ theme });
   const [popoverPosition, setPopoverPosition] = useState({ top: 0, left: 0 });
   const popoverRef = useRef(null);
 
