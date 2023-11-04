@@ -11,6 +11,7 @@ const UploadImage = ({
   onChange,
   label = 'Resim Yükle',
   isMultiple = false,
+  gradient,
 }) => {
   const [selectedImages, setSelectedImages] = useState(value);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
@@ -87,6 +88,7 @@ const UploadImage = ({
         <Button
           onClick={handleOpenFileInput}
           icon={<UploadSvg />}
+          gradient={gradient}
           style={{ width: '100%' }}
           label={'  ' + label}
         />
@@ -109,5 +111,6 @@ UploadImage.propTypes = {
   onChange: PropTypes.func,
   label: PropTypes.string,
   isMultiple: PropTypes.bool,
+  gradient: PropTypes.bool,
 };
 export default UploadImage;

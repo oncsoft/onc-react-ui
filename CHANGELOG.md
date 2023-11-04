@@ -1,5 +1,9 @@
 ### Release
 
+**_Version 0.24.1_**
+
+- Gradient fix
+
 **_Version 0.24.0_**
 
 - Neredeyse tüm componentlere gradient prosu eklendi.Stil değişkenleri için helper fonksiyon yazıldı.

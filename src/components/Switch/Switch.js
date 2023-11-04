@@ -3,7 +3,7 @@ import stylesModule from './Switch.module.css';
 import PropTypes from 'prop-types';
 import { getStyleVariables, useTheme } from '../../utils/theme';
 
-const Switch = ({ checked, onChange, type = 'default' }) => {
+const Switch = ({ checked, onChange, type = 'default', gradient }) => {
   const theme = useTheme();
   const styleVariables = getStyleVariables({ theme });
   const toggleSwitch = () => {
@@ -18,6 +18,7 @@ const Switch = ({ checked, onChange, type = 'default' }) => {
           checked={checked}
           onChange={toggleSwitch}
           style={styleVariables}
+          className={`${gradient ? stylesModule['gradient'] : ''}`}
         />
         <span
           className={`${stylesModule.slider} ${stylesModule[type]}`}
@@ -32,6 +33,7 @@ Switch.propTypes = {
   checked: PropTypes.bool,
   onChange: PropTypes.func,
   type: PropTypes.oneOf(['default', 'round']),
+  gradient: PropTypes.bool,
 };
 
 export default Switch;

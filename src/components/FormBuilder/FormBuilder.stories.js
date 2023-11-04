@@ -29,6 +29,7 @@ const Story = () => {
             name: 'a',
             label: 'İnput Alanı',
             bordered: true,
+            gradient: true,
           },
           {
             item: 6,
@@ -36,6 +37,7 @@ const Story = () => {
             name: 'b',
             label: 'İnput Alanı2',
             value: 'bbb',
+            gradient: true,
           },
           {
             item: 6,
@@ -45,6 +47,7 @@ const Story = () => {
 
             value: 'b',
             data: ['a', 'b', 'c'],
+            gradient: true,
           },
           {
             item: 6,
@@ -53,12 +56,14 @@ const Story = () => {
 
             name: 'd',
             value: new Date(),
+            gradient: true,
           },
           {
             item: 12,
             type: 'ColorPicker',
             name: 'e',
             value: '#fff',
+            gradient: true,
           },
         ]}
       />

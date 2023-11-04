@@ -7,12 +7,12 @@
 }
 .rounded {
   border-radius: 1.25rem;
-  outline: 0.1rem solid var(--primaryColor) !important;
+  outline: 0.1rem solid var(--primaryColor);
 }
 
 .bordered {
   border-radius: 0.4rem;
-  outline: 0.1rem solid var(--primaryColor) !important;
+  outline: 0.1rem solid var(--primaryColor);
 }
 
 .input {

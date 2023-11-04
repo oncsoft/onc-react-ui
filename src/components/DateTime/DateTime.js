@@ -81,12 +81,18 @@ const DateTime = ({
                 label=""
                 onClick={calendarOpen}
                 disabled={disabled}
+                gradient={gradient}
               />
             </Grid>
           }
         />
         <div className={`${styleModules.calendarContainer}`}>
-          <Calendar open={calendar} value={value} onChange={calendarOnChange} />
+          <Calendar
+            open={calendar}
+            value={value}
+            onChange={calendarOnChange}
+            gradient={gradient}
+          />
         </div>
       </div>
     </>

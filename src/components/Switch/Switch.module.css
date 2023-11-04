@@ -57,3 +57,7 @@ input:checked + .slider:before {
 .slider.round:before {
   border-radius: 50%;
 }
+
+.gradient:checked + .slider {
+  background: linear-gradient(to right, var(--gradientColors));
+}

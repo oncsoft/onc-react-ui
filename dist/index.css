@@ -89,12 +89,12 @@
 }
 .ABbst_u63ozeaHHZ4K1b {
   border-radius: 1.25rem;
-  outline: 0.1rem solid var(--primaryColor) !important;
+  outline: 0.1rem solid var(--primaryColor);
 }
 
 .ebtUcZ09Dhrr5PxDWUs5 {
   border-radius: 0.4rem;
-  outline: 0.1rem solid var(--primaryColor) !important;
+  outline: 0.1rem solid var(--primaryColor);
 }
 
 .VuK4CecepGSeSwTkC1CQ {
@@ -1463,6 +1463,10 @@ input:checked + .ozKo2TZ_ev5T5WTQwWNI:before {
 
 .ozKo2TZ_ev5T5WTQwWNI.UXIQxtl4Ho_u40SAlCIV:before {
   border-radius: 50%;
+}
+
+.zfnUsdiiJyVeu1WQeKmq:checked + .ozKo2TZ_ev5T5WTQwWNI {
+  background: linear-gradient(to right, var(--gradientColors));
 }
 
 .IFjh8x1RT6BCwEigd39Q {
