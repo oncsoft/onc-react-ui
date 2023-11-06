@@ -1,5 +1,9 @@
 ### Release
 
+**_Version 0.25.1_**
+
+- ReactCrud export edildi.
+
 **_Version 0.25.0_**
 
 - ReactCrud başlatıldı.

@@ -8,14 +8,18 @@ import FormBuilder from '../FormBuilder/FormBuilder';
 import useStateRefCallback from '../../hooks/useStateRefCallback';
 import { useTheme } from '../../utils/theme';
 
-const ReactCrud = ({ url }) => {
+const ReactCrud = ({ url, token }) => {
   const [modal, setModal] = useStateRefCallback({ open: false });
   const [data, setData] = useState([]);
   const [columns, setColumns] = useState([]);
   const formBuilderRef = useRef();
 
   useEffect(() => {
-    fetch(url)
+    fetch(url, {
+      headers: {
+        Authorization: `Bearer ${token}`, // Bearer token ile yetkilendirme
+      },
+    })
       .then((response) => {
         if (!response.ok) {
           throw new Error('HTTP Error: ' + response.status);
@@ -71,6 +75,9 @@ const ReactCrud = ({ url }) => {
   const remove = (id) => () => {
     fetch(url + '/destroy/' + id, {
       method: 'POST',
+      headers: {
+        Authorization: `Bearer ${token}`, // Bearer token ile yetkilendirme
+      },
     })
       .then((response) => {
         if (!response.ok) {
@@ -87,7 +94,11 @@ const ReactCrud = ({ url }) => {
   };
 
   const edit = (id) => () => {
-    fetch(url + '/' + id)
+    fetch(url + '/' + id, {
+      headers: {
+        Authorization: `Bearer ${token}`, // Bearer token ile yetkilendirme
+      },
+    })
       .then((response) => {
         if (!response.ok) {
           throw new Error('HTTP Error: ' + response.status);
@@ -110,7 +121,9 @@ const ReactCrud = ({ url }) => {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
+        Authorization: `Bearer ${token}`,
       },
+
       body: JSON.stringify(formBuilderRef.current.getData),
     })
       .then((response) => {

@@ -463,7 +463,10 @@
   position: absolute;
   border-radius: 1rem;
   box-shadow: 0 0.5rem 1.5rem -0.5rem var(--shadowColor);
+  top: 0;
+  left: 0;
   color: var(--secondaryTextColor);
+  z-index: 1000;
 }
 
 .vEuInzFEn_yAAd7Aqzai {
@@ -1376,6 +1379,7 @@
   border: 2px solid var(--primaryColor);
   background: linear-gradient(to right, var(--themeBackgroundColor)) !important;
   color: var(--themeTextColor) !important;
+  width: 100%;
 }
 
 .dsFjJeJrSXO5FZ798VNC {
@@ -1627,10 +1631,6 @@ h2 {
   background-color: var(--secondaryColor);
 }
 
-.IKubJaPj9roPvnJ6dfXZ {
-  background: linear-gradient(to right, var(--gradientColors));
-}
-
 .sk9t4ktxa8eTllFr05aQ {
   height: var(--containerHeight);
   overflow: auto;
@@ -1781,7 +1781,7 @@ textarea:focus {
 }
 
 .table-container {
-  border: 1px solid var(--secondary);
+  border: 1px solid var(--secondaryColor);
   max-height: 400px;
   overflow: auto;
   position: relative;
@@ -1791,7 +1791,7 @@ textarea:focus {
   display: flex;
   position: sticky;
   top: 0;
-  background-color: var(--primary);
+  background-color: var(--primaryColor);
   z-index: 1;
   color: var(--secondaryTextColor);
 }

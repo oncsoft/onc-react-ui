@@ -126,6 +126,7 @@ const App = () => {
         </button>
         <ReactCrud
           url={'http://localhost:8888/project-name/public/api/posts'}
+          token="iq4k86np9bVfD4xBM6i2XAeqGlg59XMmIQt32APElGKJQOAnNjy09wKSwP5f"
         />
         <FormBuilder
           ref={builderRef}

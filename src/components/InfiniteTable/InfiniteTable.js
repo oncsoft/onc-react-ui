@@ -59,19 +59,18 @@ const InfiniteTable = ({
           </div>
         ))}
       </div>
-      {data.length > 0 && (
-        <InfiniteScroll
-          data={data}
-          renderItem={renderItem}
-          itemHeight={itemHeight}
-          containerHeight={containerHeight}
-          fetchData={fetchData}
-          loadingText={loadingText}
-          virtualized={virtualized}
-          spinner={spinner}
-          gradient={gradient}
-        />
-      )}
+
+      <InfiniteScroll
+        data={data}
+        renderItem={renderItem}
+        itemHeight={itemHeight}
+        containerHeight={containerHeight}
+        fetchData={fetchData}
+        loadingText={loadingText}
+        virtualized={virtualized}
+        spinner={spinner}
+        gradient={gradient}
+      />
     </div>
   );
 };

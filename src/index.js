@@ -22,6 +22,7 @@ export { default as ColorPicker } from '../src/components/ColorPicker/ColorPicke
 export { default as Popover } from '../src/components/Popover/Popover';
 export { default as InfiniteTable } from '../src/components/InfiniteTable/InfiniteTable';
 export { default as FormBuilder } from '../src/components/FormBuilder/FormBuilder';
+export { default as ReactCrud } from '../src/components/ReactCrud/ReactCrud';
 
 export { default as ThemeProvider } from '../src/utils/theme';
 
