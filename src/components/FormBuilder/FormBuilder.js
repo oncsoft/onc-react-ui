@@ -17,7 +17,9 @@ const FormBuilder = forwardRef(({ data = [] }, ref) => {
   const onChange = (name) => (e) => {
     setValue((current) => ({
       ...current,
-      [name]: e.target?.value ?? e.target?.checked ?? e,
+      [name]: e.target?.hasOwnProperty('checked')
+        ? e.target?.checked
+        : e.target?.value ?? e,
     }));
   };
 
@@ -25,6 +27,7 @@ const FormBuilder = forwardRef(({ data = [] }, ref) => {
     ref,
     () => ({
       getData: value,
+      setData: setValue,
     }),
     [value],
   );

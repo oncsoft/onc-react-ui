@@ -1,5 +1,9 @@
 ### Release
 
+**_Version 0.25.0_**
+
+- ReactCrud başlatıldı.
+
 **_Version 0.24.1_**
 
 - Gradient fix

@@ -65,6 +65,13 @@ const Story = () => {
             value: '#fff',
             gradient: true,
           },
+          {
+            item: 12,
+            type: 'Editor',
+            name: 'editor',
+            value: '#fff',
+            gradient: true,
+          },
         ]}
       />
       <Button

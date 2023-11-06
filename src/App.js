@@ -24,6 +24,7 @@ import ColorPicker from './components/ColorPicker/ColorPicker.js';
 import Popover from './components/Popover/Popover.js';
 import InfiniteTable from './components/InfiniteTable/InfiniteTable.js';
 import FormBuilder from './components/FormBuilder/FormBuilder.js';
+import ReactCrud from './components/ReactCrud/ReactCrud.js';
 
 let i = 1;
 
@@ -111,7 +112,7 @@ const App = () => {
 
   const builderRef = useRef();
   return (
-    <ThemeProvider>
+    <ThemeProvider theme={{ primaryTextColor: 'white' }}>
       <div className="App">
         <button
           ref={ref1}
@@ -123,6 +124,9 @@ const App = () => {
         >
           asdad
         </button>
+        <ReactCrud
+          url={'http://localhost:8888/project-name/public/api/posts'}
+        />
         <FormBuilder
           ref={builderRef}
           data={[

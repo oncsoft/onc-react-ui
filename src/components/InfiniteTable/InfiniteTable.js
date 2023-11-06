@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import InfiniteScroll from '../InfiniteScroll/InfiniteScroll';
 import './InfiniteTable.css';
+import { getStyleVariables, useTheme } from '../../utils/theme';
 
 const InfiniteTable = ({
   data = [],
@@ -15,8 +16,9 @@ const InfiniteTable = ({
   spinner = true,
   gradient,
 }) => {
+  const theme = useTheme();
   const [columnRefs, setColumnRefs] = useState([]);
-
+  const styleVariables = getStyleVariables({ theme });
   useEffect(() => {
     if (columns.length > 0 && data.length > 0) {
       const refs = columns.map(() => data.map(() => React.createRef()));
@@ -49,8 +51,8 @@ const InfiniteTable = ({
   };
 
   return (
-    <div className="table-container">
-      <div className="table-header">
+    <div className="table-container" style={styleVariables}>
+      <div className="table-header" style={styleVariables}>
         {columns.map((column, columnIndex) => (
           <div key={columnIndex} className="table-cell">
             {column.header}

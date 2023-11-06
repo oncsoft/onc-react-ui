@@ -1,5 +1,5 @@
 .table-container {
-  border: 1px solid var(--secondary);
+  border: 1px solid var(--secondaryColor);
   max-height: 400px;
   overflow: auto;
   position: relative;
@@ -9,7 +9,7 @@
   display: flex;
   position: sticky;
   top: 0;
-  background-color: var(--primary);
+  background-color: var(--primaryColor);
   z-index: 1;
   color: var(--secondaryTextColor);
 }

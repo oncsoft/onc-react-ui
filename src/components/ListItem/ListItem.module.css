@@ -12,7 +12,3 @@
 .listItem:hover {
   background-color: var(--secondaryColor);
 }
-
-.gradient {
-  background: linear-gradient(to right, var(--gradientColors));
-}

@@ -22,12 +22,18 @@ const ThemeProvider = ({ children, theme }) => {
   useLayoutEffect(() => {
     const root = document.documentElement;
 
-    root.style.setProperty('--primary', selectedTheme.primaryColor);
-    root.style.setProperty('--secondary', selectedTheme.secondaryColor);
+    root.style.setProperty(
+      '--primary',
+      selectedTheme.primaryColor ?? defaultTheme.primaryColor,
+    );
+    root.style.setProperty(
+      '--secondary',
+      selectedTheme.secondaryColor ?? defaultTheme.secondaryColor,
+    );
   }, []);
 
   return (
-    <ThemeContext.Provider value={selectedTheme}>
+    <ThemeContext.Provider value={{ ...defaultTheme, ...selectedTheme }}>
       {children}
     </ThemeContext.Provider>
   );

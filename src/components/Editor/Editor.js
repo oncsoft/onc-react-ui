@@ -1,4 +1,4 @@
-import React, { useState, useLayoutEffect } from 'react';
+import React, { useState, useLayoutEffect, useEffect, useRef } from 'react';
 import { ContentState, EditorState, convertFromHTML } from 'draft-js';
 import { Editor as EditorDraft } from 'react-draft-wysiwyg';
 import PropTypes from 'prop-types';
@@ -24,6 +24,25 @@ const Editor = ({
     EditorState.createWithContent(initialContentState),
   );
   const theme = useTheme();
+  const firstValue = useRef(false);
+
+  useEffect(() => {
+    if (firstValue.current) {
+      return;
+    }
+
+    if (value) {
+      const blocksFromHTML = convertFromHTML(value);
+      const contentState = ContentState.createFromBlockArray(
+        blocksFromHTML.contentBlocks,
+        blocksFromHTML.entityMap,
+      );
+      const newEditorState = EditorState.createWithContent(contentState);
+      setEditorState(newEditorState);
+      firstValue.current = true;
+    }
+  }, [value]);
+
   useLayoutEffect(() => {
     if (type === 'default') {
       return;
