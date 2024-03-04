@@ -1,4 +1,7 @@
 ### Release
+**_Version 0.26.0_**
+
+- Image componenti eklendi.
 
 **_Version 0.25.1_**
 

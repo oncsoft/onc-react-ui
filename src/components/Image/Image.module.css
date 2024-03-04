@@ -1,0 +1,8 @@
+.image{
+    border:5px solid var(--primaryColor);
+
+}
+
+.rounded {
+    border-radius: 100%;
+}
