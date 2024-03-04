@@ -1,4 +1,8 @@
 ### Release
+**_Version 0.26.1_**
+
+- Image componenti exporta eklendi.
+
 **_Version 0.26.0_**
 
 - Image componenti eklendi.

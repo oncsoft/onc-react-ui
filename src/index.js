@@ -23,6 +23,7 @@ export { default as Popover } from '../src/components/Popover/Popover';
 export { default as InfiniteTable } from '../src/components/InfiniteTable/InfiniteTable';
 export { default as FormBuilder } from '../src/components/FormBuilder/FormBuilder';
 export { default as ReactCrud } from '../src/components/ReactCrud/ReactCrud';
+export { default as Image } from '../src/components/Image/Image';
 
 export { default as ThemeProvider } from '../src/utils/theme';
 
