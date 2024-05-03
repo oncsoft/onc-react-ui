@@ -203,7 +203,7 @@ const App = () => {
                     message: 'Osman' + e,
                     type: 'warning',
                     delay: 1000,
-                    position: 'bottom-right',
+                    position: 'top-right',
                   });
                 }}
               />

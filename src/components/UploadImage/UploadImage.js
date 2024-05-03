@@ -77,6 +77,7 @@ const UploadImage = ({
                   width: '100%',
                   background: theme.errorColor,
                 }}
+                label=""
                 icon={<ThrashSvg />}
                 onClick={() => handleRemoveImage(index)}
               />

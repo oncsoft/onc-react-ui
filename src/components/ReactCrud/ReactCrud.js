@@ -7,6 +7,7 @@ import { PenSvg, ThrashSvg } from '../Icons';
 import FormBuilder from '../FormBuilder/FormBuilder';
 import useStateRefCallback from '../../hooks/useStateRefCallback';
 import { useTheme } from '../../utils/theme';
+import { useAlert } from '../Alert/useAlert';
 
 const ReactCrud = ({ url, token }) => {
   const [modal, setModal] = useStateRefCallback({ open: false });
@@ -14,7 +15,13 @@ const ReactCrud = ({ url, token }) => {
   const [columns, setColumns] = useState([]);
   const formBuilderRef = useRef();
 
+  const { showAlert } = useAlert();
+
   useEffect(() => {
+    loadData();
+  }, []);
+
+  const loadData = () => {
     fetch(url, {
       headers: {
         Authorization: `Bearer ${token}`, // Bearer token ile yetkilendirme
@@ -33,7 +40,7 @@ const ReactCrud = ({ url, token }) => {
       .catch((error) => {
         console.error('Hata oluştu: ' + error.message);
       });
-  }, []);
+  };
 
   const convertColumns = (columns = []) => {
     const columnList = columns.map((column) => ({
@@ -87,6 +94,13 @@ const ReactCrud = ({ url, token }) => {
       })
       .then((data) => {
         console.error(data);
+        showAlert({
+          message: 'Silme İşlemi başarılı',
+          type: 'success',
+          delay: 4000,
+          position: 'top-right',
+        });
+        loadData();
       })
       .catch((error) => {
         console.error('Hata oluştu: ' + error.message);
@@ -134,6 +148,13 @@ const ReactCrud = ({ url, token }) => {
       })
       .then((data) => {
         console.error(data);
+        showAlert({
+          message: 'Güncelleme İşlemi başarılı',
+          type: 'success',
+          delay: 4000,
+          position: 'top-right',
+        });
+        loadData();
       })
       .catch((error) => {
         console.error('Hata oluştu: ' + error.message);

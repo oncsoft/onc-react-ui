@@ -1,4 +1,9 @@
 ### Release
+
+**_Version 0.26.2_**
+
+- UploadImage componenti label problemi çözüldü.
+
 **_Version 0.26.1_**
 
 - Image componenti exporta eklendi.
@@ -6,6 +11,10 @@
 **_Version 0.26.0_**
 
 - Image componenti eklendi.
+
+**_Version 0.25.2_**
+
+- ReactCrud laravel configurasyonları test edildi.
 
 **_Version 0.25.1_**
 
